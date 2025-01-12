@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/crypto-js.js"></script>
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+  </head>
+  <body>
+    <div>Smart Contract Address:</div>
+    <textarea id="contractAddress">
+0x1234567890abcdef1234567890abcdef12345678</textarea
+    >
+    <div>Token ID:</div>
+    <input type="text" id="tokenId" value="1" />
+    <button id="NFC-write-btn" onclick="writeNFCTag();">
+      Write to NFC Tag
+    </button>
+    <button id="NFC-read-btn" onclick="readNFCTag();">Read NFC Tag</button>
+
+    <script>
+      checkIFNFCSupported();
+
+      function checkIFNFCSupported() {
+        if (!("NDEFReader" in window)) {
+          alert("NFC is not supported.");
+          document.getElementById("NFC-write-btn").disabled = true;
+          document.getElementById("NFC-read-btn").disabled = true;
+        }
+      }
+
+      async function writeNFCTag() {
+        alert("Place the device close to the NFC tag to write.");
+        let contractAddress = document
+          .getElementById("contractAddress")
+          .value.trim();
+        let tokenId = document.getElementById("tokenId").value.trim();
+        if (!contractAddress || !tokenId) {
+          alert("Contract Address and Token ID must not be empty.");
+          return;
+        }
+        const message = JSON.stringify({
+          contractAddress: contractAddress,
+          tokenId: tokenId,
+        });
+
+        try {
+          const ndef = new NDEFReader();
+          await ndef.write(message);
+          alert("Message written to NFC tag successfully.");
+        } catch (error) {
+          alert(`Write failed. Try again. Error: ${error}`);
+        }
+      }
+
+      async function readNFCTag() {
+        alert("Place the device close to the NFC tag to read.");
+        try {
+          const ndef = new NDEFReader();
+          await ndef.scan(); // Start scanning for NFC tags
+
+          ndef.onreading = (event) => {
+            const decoder = new TextDecoder();
+            const records = event.message.records;
+
+            for (const record of records) {
+              if (record.recordType === "text") {
+                const data = decoder.decode(record.data);
+                try {
+                  const parsedData = JSON.parse(data);
+
+                  if (parsedData.contractAddress && parsedData.tokenId) {
+                    const url = `https://testnets.opensea.io/assets/base-sepolia/${parsedData.contractAddress}/${parsedData.tokenId}`;
+                    alert(`Redirecting to: ${url}`);
+                    window.location.href = url;
+                  } else {
+                    alert("Invalid data format in NFC tag.");
+                  }
+                } catch (error) {
+                  alert("Failed to parse NFC tag data.");
+                }
+              }
+            }
+          };
+
+          ndef.onreadingerror = () => {
+            alert("Failed to read NFC tag. Please try again.");
+          };
+        } catch (error) {
+          alert(`Error while scanning NFC tag: ${error}`);
+        }
+      }
+    </script>
+  </body>
+</html>

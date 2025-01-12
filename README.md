@@ -1,13 +1,49 @@
-# MEMORA NFT (DEMO)
+# thirdweb SDK + Next.js starter
 
-Tenang!  
-Ini hanyalah UJIAN dan COBAAN saja!  
-Harap tenang!
+## Setup client id
 
-UJIAN dan COBAAN ini terjadi dimana perdagangan akan senantiasa berjalan dengan baik dan sebaik-baiknya sesuai dengan pendapatan yang dihasilkan dan nilai yang dibentuk oleh masing-masing penduduk ENDHONESA.
+Before you start, you need to replace the placeholder `clientId` with your client ID to use thirdweb SDK.
 
-Harap tenang!  
-Ini UJIAN dan COBAAN saja!  
-Tenang!
+Refer to [Creating a client](https://portal.thirdweb.com/typescript/v5/client) guide to see how you can get a client id.
 
-# hi-bukhari
+Go to `src/client.ts` file and replace the placeholder `clientId` with your client ID.
+
+```ts
+const clientId = "......";
+```
+
+## Usage
+
+### Install dependencies
+
+```bash
+yarn
+```
+
+### Start development server
+
+```bash
+yarn dev
+```
+
+### Create a production build
+
+```bash
+yarn build
+```
+
+### Preview the production build
+
+```bash
+yarn start
+```
+
+## Resources
+
+- [thirdweb SDK documentation](https://portal.thirdweb.com/typescript/v5)
+- [React components and hooks](https://portal.thirdweb.com/typescript/v5/react)
+- [thirdweb Dashboard](https://thirdweb.com/dashboard)
+
+## Join our Discord!
+
+For any questions or suggestions, join our discord at [https://discord.gg/thirdweb](https://discord.gg/thirdweb).

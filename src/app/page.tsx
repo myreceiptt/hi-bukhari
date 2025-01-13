@@ -18,6 +18,18 @@ import powered from "../../public/bukhari-fa-login-06.png";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { base } from "thirdweb/chains";
 
+const ConnectEmbedPage: React.FC = () => {
+  return (
+    <ErrorBoundary>
+      <div className="p-2">
+        <SignInLayout>
+          <ConnectEmbeds />
+        </SignInLayout>
+      </div>
+    </ErrorBoundary>
+  );
+};
+
 export function SignInLayout(props: { children: React.ReactNode }) {
   return (
     <div className="w-full lg:grid lg:grid-cols-2">
@@ -59,48 +71,30 @@ export function SignInLayout(props: { children: React.ReactNode }) {
   );
 }
 
-const ConnectEmbedPage: React.FC = () => {
-  return (
-    <ErrorBoundary>
-      <div className="p-2">
-        <SignInLayout>
-          <ConnectEmbeds />
-        </SignInLayout>
-      </div>
-    </ErrorBoundary>
-  );
-};
-
 function ConnectEmbeds() {
-  return (
-    <div className="grid justify-center">
-      <CustomThemeConnectEmbed />
-    </div>
-  );
-}
-
-function CustomThemeConnectEmbed() {
   // Check if wallet is connected
   const account = useActiveAccount();
 
   return (
-    <div className="flex flex-col items-center mb-20 md:mb-20">
-      <div className="max-w-lg w-full h-auto">
-        <ConnectEmbed
-          client={client}
-          chains={rantais}
-          wallets={dompets}
-          accountAbstraction={{
-            factoryAddress: "0x82EC684C86b84AC60b5e162EC87d6DCF4213D468",
-            chain: base,
-            sponsorGas: true,
-          }}
-          privacyPolicyUrl="/#"
-          termsOfServiceUrl="/#"
-          showThirdwebBranding={false}
-        />
+    <div className="grid justify-center">
+      <div className="flex flex-col items-center mb-20 md:mb-20">
+        <div className="max-w-lg w-full h-auto">
+          <ConnectEmbed
+            client={client}
+            chains={rantais}
+            wallets={dompets}
+            accountAbstraction={{
+              factoryAddress: "0x82EC684C86b84AC60b5e162EC87d6DCF4213D468",
+              chain: base,
+              sponsorGas: true,
+            }}
+            privacyPolicyUrl="/#"
+            termsOfServiceUrl="/#"
+            showThirdwebBranding={false}
+          />
+        </div>
+        {account && <ConnectButton client={client} />}
       </div>
-      {account && <ConnectButton client={client} />}
     </div>
   );
 }

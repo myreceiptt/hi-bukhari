@@ -3,10 +3,10 @@
 // External libraries
 import React from "react";
 import Image from "next/image";
+import { ethereum, polygon, base, baseSepolia } from "thirdweb/chains";
 import { ConnectButton, ConnectEmbed, useActiveAccount } from "thirdweb/react";
 
 // Blockchain configurations
-import { rantais } from "@/config/rantais";
 import { dompets } from "@/config/dompets";
 import { client } from "./client";
 
@@ -16,7 +16,8 @@ import banner from "../../public/bukhari-fa-login-04.png";
 import powered from "../../public/bukhari-fa-login-06.png";
 
 import { ErrorBoundary } from "@/components/ErrorBoundary";
-import { base } from "thirdweb/chains";
+
+const rantais = [ethereum, polygon, base, baseSepolia];
 
 const ConnectEmbedPage: React.FC = () => {
   return (
@@ -49,10 +50,10 @@ export function SignInLayout(props: { children: React.ReactNode }) {
               src={banner}
               alt="Bukhari Islamic Art Banner with Partners Logo."
             />
-            <h1 className="flex text-left text-lg md:text-xl lg:text-2xl xl:text-3xl font-normal tracking-tighter justify-start align-middle px-[7%]">
+            <h1 className="flex text-left text-lg md:text-xl lg:text-2xl xl:text-3xl font-normal tracking-tighter justify-start align-middle px-[4vh] md:px-[7vh]">
               Get Ready!
             </h1>
-            <h2 className="flex text-left text-xs md:text-sm lg:text-base xl:text-lg font-medium tracking-tighter justify-start align-middle px-[7%] pb-[1%]">
+            <h2 className="flex text-left text-xs md:text-sm lg:text-base xl:text-lg font-medium tracking-tighter justify-start align-middle px-[4vh] md:px-[7vh] pb-[1vh]">
               Register Now to Immerse Yourself in Galeri Harmoni Istiqlal
               Digital Experience
             </h2>

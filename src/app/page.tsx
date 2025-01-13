@@ -46,14 +46,15 @@ function SignInLayout(props: { children: React.ReactNode }) {
         <div className="w-full flex flex-col items-center">
           <div>
             <Image
-              className="z-0 object-contain w-full"
               src={banner}
               alt="Bukhari Islamic Art Banner with Partners Logo."
+              className="z-0 object-contain w-full"
+              priority
             />
             <h1 className="flex text-left text-lg md:text-xl lg:text-2xl xl:text-3xl font-normal tracking-tighter justify-start align-middle px-[4vh] md:px-[7vh]">
               Get Ready!
             </h1>
-            <h2 className="flex text-left text-xs md:text-sm lg:text-base xl:text-lg font-medium tracking-tighter justify-start align-middle px-[4vh] md:px-[7vh] pb-[1vh]">
+            <h2 className="flex text-left text-xs md:text-sm lg:text-base xl:text-lg font-medium tracking-tighter justify-start align-middle px-[4vh] md:px-[7vh]">
               Register Now to Immerse Yourself in Galeri Harmoni Istiqlal
               Digital Experience
             </h2>
@@ -61,9 +62,10 @@ function SignInLayout(props: { children: React.ReactNode }) {
           {props.children}
           <div>
             <Image
-              className="z-0 object-contain w-full"
               src={powered}
               alt="Bukhari Islamic Art Powered by VOYAGE."
+              className="z-0 object-contain w-full"
+              priority
             />
           </div>
         </div>
@@ -77,25 +79,31 @@ function ConnectEmbeds() {
   const account = useActiveAccount();
 
   return (
-    <div className="grid justify-center">
-      <div className="flex flex-col items-center mb-20 md:mb-20">
-        <div className="max-w-lg w-full h-auto">
-          <ConnectEmbed
-            client={client}
-            chains={rantais}
-            wallets={dompets}
-            accountAbstraction={{
-              factoryAddress: "0x82EC684C86b84AC60b5e162EC87d6DCF4213D468",
-              chain: base,
-              sponsorGas: true,
-            }}
-            privacyPolicyUrl="/#"
-            termsOfServiceUrl="/#"
-            showThirdwebBranding={false}
-          />
-        </div>
-        {account && <ConnectButton client={client} />}
+    <div>
+      <div className="w-full h-auto justify-center items-center py-4">
+        <ConnectEmbed
+          client={client}
+          modalSize="compact"
+          appMetadata={{
+            name: "Login Bukhari Islamic Art Gallery",
+            url: "https://galeri.harmoniistiqlal.com",
+            description:
+              "Login to Bukhari Islamic Art Gallery in Harmoni Istiqlal.",
+            logoUrl:
+              "https://galeri.harmoniistiqlal.com/bukhari-fa-login-02.png",
+          }}
+          wallets={dompets}
+          accountAbstraction={{
+            factoryAddress: "0x82EC684C86b84AC60b5e162EC87d6DCF4213D468",
+            chain: base,
+            sponsorGas: true,
+          }}
+          privacyPolicyUrl="/#"
+          termsOfServiceUrl="/#"
+          showThirdwebBranding={false}
+        />
       </div>
+      {account && <ConnectButton client={client} chains={rantais} />}
     </div>
   );
 }

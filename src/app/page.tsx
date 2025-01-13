@@ -139,9 +139,6 @@ function ConnectEmbeds() {
           privacyPolicyUrl="/#"
           termsOfServiceUrl="/#"
           showThirdwebBranding={false}
-          style={{
-            backgroundColor: "transparent",
-          }}
         />
       </div>
     </div>

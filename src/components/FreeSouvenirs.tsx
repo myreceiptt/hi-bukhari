@@ -14,7 +14,7 @@ import { client } from "@/config/client";
 import { ThirdwebContract } from "thirdweb";
 import { FetchEthereumPrice } from "@/config/ethers";
 
-const PaidSouvenirs: React.FC = () => {
+const FreeSouvenirs: React.FC = () => {
   const smartAccount = useActiveAccount();
   const [pesanSukses, setPesanSukses] = React.useState<string | null>(null);
   const [pesanGagal, setPesanGagal] = React.useState<string | null>(null);
@@ -23,7 +23,7 @@ const PaidSouvenirs: React.FC = () => {
     <main className="grid gap-4 place-items-center">
       <div className="flex flex-col gap-2 items-center">
         <h1 className="text-center text-sm md:text-base lg:text-lg xl:text-xl font-normal">
-          Exclusive Virtual Collectibles
+          Freemium Virtual Collectibles
         </h1>
         {pesanSukses && (
           <h4 className="px-1 py-0.5 rounded text-base font-semibold text-blue-500 text-center">
@@ -40,7 +40,7 @@ const PaidSouvenirs: React.FC = () => {
         <NFTClaimer
           receiverAddress={smartAccount?.address}
           dropContract={bukhariVirtualCollectibles}
-          tokenId={0n}
+          tokenId={3n}
           padaSukses={() => {
             setPesanSukses("Claim successful!");
             setPesanGagal(null);
@@ -53,7 +53,7 @@ const PaidSouvenirs: React.FC = () => {
         <NFTClaimer
           receiverAddress={smartAccount?.address}
           dropContract={bukhariVirtualCollectibles}
-          tokenId={1n}
+          tokenId={4n}
           padaSukses={() => {
             setPesanSukses("Claim successful!");
             setPesanGagal(null);
@@ -66,7 +66,7 @@ const PaidSouvenirs: React.FC = () => {
         <NFTClaimer
           receiverAddress={smartAccount?.address}
           dropContract={bukhariVirtualCollectibles}
-          tokenId={2n}
+          tokenId={5n}
           padaSukses={() => {
             setPesanSukses("Claim successful!");
             setPesanGagal(null);
@@ -110,30 +110,6 @@ const NFTClaimer: React.FC<NFTClaimerProps> = (props: NFTClaimerProps) => {
     queryOptions: { enabled: !!props.receiverAddress },
   });
 
-  const [ethPrice, setEthPrice] = useState<number | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const getEthPrice = async () => {
-      const price = await FetchEthereumPrice();
-      setEthPrice(price);
-      setLoading(false);
-    };
-
-    getEthPrice();
-
-    // Optionally update every 30 seconds
-    const interval = setInterval(getEthPrice, 30000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const calculatePrice = () => {
-    if (ethPrice) {
-      return (0.0011 * ethPrice).toFixed(2); // Multiply and format to 2 decimal places
-    }
-    return null;
-  };
-
   return (
     <>
       <div className="w-full p-2 rounded-3xl">
@@ -157,21 +133,7 @@ const NFTClaimer: React.FC<NFTClaimerProps> = (props: NFTClaimerProps) => {
                     {nft?.metadata.name}
                   </h2>
                   <h2 className="text-center text-xs font-normal">
-                    {loading ? (
-                      <h2 className="text-center text-xs font-normal">
-                        <code className="px-1 py-0.5 rounded font-normal">
-                          Loading...
-                        </code>
-                      </h2>
-                    ) : ethPrice ? (
-                      `$${calculatePrice()} on ${props.dropContract.chain.name}`
-                    ) : (
-                      <h2 className="text-center text-xs font-normal">
-                        <code className="px-1 py-0.5 rounded font-normal">
-                          Failed
-                        </code>
-                      </h2>
-                    )}
+                    On {props.dropContract.chain.name}
                   </h2>
                   <h2 className="text-center text-xs font-normal">
                     Own {ownedNfts?.toString() || "0"} Edition
@@ -206,4 +168,4 @@ const NFTClaimer: React.FC<NFTClaimerProps> = (props: NFTClaimerProps) => {
   );
 };
 
-export default PaidSouvenirs;
+export default FreeSouvenirs;

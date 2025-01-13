@@ -13,7 +13,7 @@ import { client } from "@/config/client";
 
 // Components
 import { ErrorBoundary } from "@/components/ErrorBoundary";
-import PaidSouvenirs from "@/components/PaidSouvenirs";
+import FreeSouvenirs from "@/components/FreeSouvenirs";
 
 // Assets
 import art from "../../../public/bukhari-fa-login-02.png";
@@ -46,7 +46,7 @@ const ConnectEmbedPage: React.FC = () => {
           />
         </div>
         <div className="flex flex-col gap-4 content-normal px-0 md:px-20 m-4">
-          <PaidSouvenirs />
+          <FreeSouvenirs />
         </div>
         <div>
           <Image

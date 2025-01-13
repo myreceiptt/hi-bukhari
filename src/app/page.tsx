@@ -118,7 +118,7 @@ function SignInLayout(props: { children: React.ReactNode }) {
 function ConnectEmbeds() {
   return (
     <div>
-      <div className="w-full h-auto justify-center items-center py-4">
+      <div className="w-full h-auto justify-center items-center p-4">
         <ConnectEmbed
           client={client}
           modalSize="compact"
@@ -139,6 +139,9 @@ function ConnectEmbeds() {
           privacyPolicyUrl="/#"
           termsOfServiceUrl="/#"
           showThirdwebBranding={false}
+          style={{
+            backgroundColor: "transparent",
+          }}
         />
       </div>
     </div>

@@ -1,6 +1,6 @@
 "use client";
 import { ConnectButton, MediaRenderer, darkTheme } from "thirdweb/react";
-import { client } from "../client";
+import { client } from "../../config/client";
 import { createWallet } from "thirdweb/wallets";
 
 const ConnectButtonPage: React.FC = () => {

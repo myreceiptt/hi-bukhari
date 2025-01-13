@@ -1,6 +1,6 @@
 "use client";
 import { ConnectButton } from "thirdweb/react";
-import { client } from "../client";
+import { client } from "../../config/client";
 import { inAppWallet } from "thirdweb/wallets";
 
 const InAppWalletsPage: React.FC = () => {

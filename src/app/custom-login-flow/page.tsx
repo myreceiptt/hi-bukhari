@@ -7,7 +7,7 @@ import {
   useConnectModal,
   useDisconnect,
 } from "thirdweb/react";
-import { client } from "../client";
+import { client } from "../../config/client";
 import { createWallet, inAppWallet } from "thirdweb/wallets";
 import { hasStoredPasskey, preAuthenticate } from "thirdweb/wallets/in-app";
 import { useState } from "react";

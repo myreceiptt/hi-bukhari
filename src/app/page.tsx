@@ -9,17 +9,16 @@ import { ConnectButton, ConnectEmbed, useActiveAccount } from "thirdweb/react";
 // Blockchain configurations
 import { dompets } from "@/config/dompets";
 import { tokeks } from "@/config/tokeks";
-import { client } from "./client";
+import { client } from "@/config/client";
 
 // Components
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 import FeaturedCards from "@/components/FeaturedCards";
 
 // Assets
 import art from "../../public/bukhari-fa-login-02.png";
 import banner from "../../public/bukhari-fa-login-04.png";
 import powered from "../../public/bukhari-fa-login-06.png";
-
-import { ErrorBoundary } from "@/components/ErrorBoundary";
 
 const rantais = [polygon, base, baseSepolia];
 
@@ -30,14 +29,32 @@ const ConnectEmbedPage: React.FC = () => {
   // If a wallet is connected, show only the ConnectButton in the center
   if (account) {
     return (
-      <div className="flex flex-col gap-4 content-normal px-0 md:px-20 m-4 items-center justify-center h-screen">
-        <ConnectButton
-          client={client}
-          chains={rantais}
-          supportedTokens={tokeks}
-        />
+      <div className="flex flex-col gap-4 px-0 md:px-20 m-4 items-center h-screen">
+        <div>
+          <Image
+            src={banner}
+            alt="Bukhari Islamic Art Banner with Partners Logo."
+            className="z-0 object-contain w-full"
+            priority
+          />
+        </div>
+        <div>
+          <ConnectButton
+            client={client}
+            chains={rantais}
+            supportedTokens={tokeks}
+          />
+        </div>
         <div className="flex flex-col gap-4 content-normal px-0 md:px-20 m-4">
           <FeaturedCards />
+        </div>
+        <div>
+          <Image
+            src={powered}
+            alt="Bukhari Islamic Art Powered by VOYAGE."
+            className="z-0 object-contain w-full"
+            priority
+          />
         </div>
       </div>
     );
@@ -116,7 +133,7 @@ function ConnectEmbeds() {
           wallets={dompets}
           accountAbstraction={{
             factoryAddress: "0x82EC684C86b84AC60b5e162EC87d6DCF4213D468",
-            chain: baseSepolia,
+            chain: base,
             sponsorGas: true,
           }}
           privacyPolicyUrl="/#"

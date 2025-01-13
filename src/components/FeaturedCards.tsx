@@ -3,52 +3,38 @@ import Image from "next/image";
 
 export default function FeaturedCards() {
   return (
-    <main className="grid grid-col gap-4 items-center">
+    <main className="grid gap-4 place-items-center">
       <div className="flex flex-col gap-2 items-center">
-        <h1 className="text-center text-lg font-semibold uppercase">
+        <h1 className="text-center text-sm md:text-base lg:text-lg xl:text-xl font-normal">
           Bukhari Islamic Art Digital Souvenir
         </h1>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 content-center">
-        <button
-          type="button"
-          className="w-full justify-items-center p-2 rounded-lg border-2 border-solid border-zinc-950 hover:scale-105 transition-transform duration-300 ease-in-out">
-          <h1 className="text-lg font-semibold uppercase">Paid Souvenir</h1>
-          <Link href="/#">
-            <Image
-              src="/erc20-icons/mem0ra.png"
-              width={111}
-              height={111}
-              alt="Affordable Exclusive Digital Souvenir"
-            />
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {[
+          {
+            href: "/#",
+            src: "/bukhari-fa-login-02-3.png",
+            alt: "Affordable Exclusive Digital Souvenir",
+          },
+          {
+            href: "/#",
+            src: "/bukhari-fa-login-02-2.png",
+            alt: "Free Exclusive Digital Souvenir",
+          },
+          {
+            href: "/#",
+            src: "/bukhari-fa-login-02-1.png",
+            alt: "Redeem Priceless Coins Reward",
+          },
+        ].map(({ href, src, alt }, index) => (
+          <Link href={href} key={index}>
+            <button
+              type="button"
+              className="w-full p-2 rounded-3xl hover:scale-105 transition-transform duration-300 ease-in-out">
+              <Image src={src} width={474} height={474} alt={alt} priority />
+            </button>
           </Link>
-        </button>
-        <button
-          type="button"
-          className="w-full justify-items-center p-2 rounded-lg border-2 border-solid border-zinc-950 hover:scale-105 transition-transform duration-300 ease-in-out">
-          <h1 className="text-lg font-semibold uppercase">Free Souvenir</h1>
-          <Link href="/#">
-            <Image
-              src="/erc20-icons/mem0ra.png"
-              width={111}
-              height={111}
-              alt="Free Exclusive Digital Souvenir"
-            />
-          </Link>
-        </button>
-        <button
-          type="button"
-          className="w-full justify-items-center p-2 rounded-lg border-2 border-solid border-zinc-950 hover:scale-105 transition-transform duration-300 ease-in-out">
-          <h1 className="text-lg font-semibold uppercase">Redeem Coin</h1>
-          <Link href="/#">
-            <Image
-              src="/erc20-icons/mem0ra.png"
-              width={111}
-              height={111}
-              alt="Redeem Priceless Coins Reward"
-            />
-          </Link>
-        </button>
+        ))}
       </div>
     </main>
   );

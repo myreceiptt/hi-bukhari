@@ -5,7 +5,7 @@ import {
   darkTheme,
   useActiveAccount,
 } from "thirdweb/react";
-import { client } from "../client";
+import { client } from "../../config/client";
 import { createWallet } from "thirdweb/wallets";
 
 const ConnectEmbedPage: React.FC = () => {

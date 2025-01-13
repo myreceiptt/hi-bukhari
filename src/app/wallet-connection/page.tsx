@@ -5,7 +5,7 @@ import {
   useActiveWallet,
   useActiveWalletChain,
 } from "thirdweb/react";
-import { client } from "../client";
+import { client } from "../../config/client";
 import { inAppWallet } from "thirdweb/wallets";
 
 const WalletConnectionPage: React.FC = () => {

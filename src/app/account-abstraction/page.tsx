@@ -6,7 +6,7 @@ import {
   useConnect,
   useDisconnect,
 } from "thirdweb/react";
-import { client } from "../client";
+import { client } from "../../config/client";
 import { sepolia } from "thirdweb/chains";
 import { createWallet } from "thirdweb/wallets";
 

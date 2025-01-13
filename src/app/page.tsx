@@ -31,7 +31,7 @@ const ConnectEmbedPage: React.FC = () => {
   );
 };
 
-export function SignInLayout(props: { children: React.ReactNode }) {
+function SignInLayout(props: { children: React.ReactNode }) {
   return (
     <div className="w-full lg:grid lg:grid-cols-2">
       <div className="relative h-screen hidden lg:block">

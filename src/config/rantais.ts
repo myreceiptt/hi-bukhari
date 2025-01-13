@@ -1,4 +1,4 @@
 // config/rantais.ts
-import { ethereum, polygon, base, baseSepolia } from "thirdweb/chains";
+import { polygon, base, baseSepolia } from "thirdweb/chains";
 
-export const rantais = [ethereum, polygon, base, baseSepolia];
+export const rantais = [polygon, base, baseSepolia];

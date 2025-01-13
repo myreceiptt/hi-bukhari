@@ -3,12 +3,16 @@
 // External libraries
 import React from "react";
 import Image from "next/image";
-import { ethereum, polygon, base, baseSepolia } from "thirdweb/chains";
+import { polygon, base, baseSepolia } from "thirdweb/chains";
 import { ConnectButton, ConnectEmbed, useActiveAccount } from "thirdweb/react";
 
 // Blockchain configurations
 import { dompets } from "@/config/dompets";
+import { tokeks } from "@/config/tokeks";
 import { client } from "./client";
+
+// Components
+import FeaturedCards from "@/components/FeaturedCards";
 
 // Assets
 import art from "../../public/bukhari-fa-login-02.png";
@@ -17,9 +21,29 @@ import powered from "../../public/bukhari-fa-login-06.png";
 
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 
-const rantais = [ethereum, polygon, base, baseSepolia];
+const rantais = [polygon, base, baseSepolia];
 
 const ConnectEmbedPage: React.FC = () => {
+  // Check if wallet is connected
+  const account = useActiveAccount();
+
+  // If a wallet is connected, show only the ConnectButton in the center
+  if (account) {
+    return (
+      <div className="flex flex-col gap-4 content-normal px-0 md:px-20 m-4 items-center justify-center h-screen">
+        <ConnectButton
+          client={client}
+          chains={rantais}
+          supportedTokens={tokeks}
+        />
+        <div className="flex flex-col gap-4 content-normal px-0 md:px-20 m-4">
+          <FeaturedCards />
+        </div>
+      </div>
+    );
+  }
+
+  // Default UI when the wallet is not connected
   return (
     <ErrorBoundary>
       <div className="p-2">
@@ -75,9 +99,6 @@ function SignInLayout(props: { children: React.ReactNode }) {
 }
 
 function ConnectEmbeds() {
-  // Check if wallet is connected
-  const account = useActiveAccount();
-
   return (
     <div>
       <div className="w-full h-auto justify-center items-center py-4">
@@ -95,7 +116,7 @@ function ConnectEmbeds() {
           wallets={dompets}
           accountAbstraction={{
             factoryAddress: "0x82EC684C86b84AC60b5e162EC87d6DCF4213D468",
-            chain: base,
+            chain: baseSepolia,
             sponsorGas: true,
           }}
           privacyPolicyUrl="/#"
@@ -103,7 +124,6 @@ function ConnectEmbeds() {
           showThirdwebBranding={false}
         />
       </div>
-      {account && <ConnectButton client={client} chains={rantais} />}
     </div>
   );
 }

@@ -7,8 +7,10 @@ import { polygon, base, baseSepolia } from "thirdweb/chains";
 import { ConnectButton, ConnectEmbed, useActiveAccount } from "thirdweb/react";
 
 // Blockchain configurations
+import { detailsButton } from "@/config/details";
 import { dompets } from "@/config/dompets";
 import { tokeks } from "@/config/tokeks";
+import { tekeks } from "@/config/tekeks";
 import { client } from "@/config/client";
 
 // Components
@@ -38,11 +40,16 @@ const ConnectEmbedPage: React.FC = () => {
             priority
           />
         </div>
-        <div>
+        <div id="connected">
           <ConnectButton
             client={client}
             chains={rantais}
             supportedTokens={tokeks}
+            detailsButton={detailsButton}
+            detailsModal={{
+              assetTabs: ["token", "nft"],
+            }}
+            supportedNFTs={tekeks}
           />
         </div>
         <div className="flex flex-col gap-4 content-normal px-0 md:px-20 m-4">
@@ -139,6 +146,11 @@ function ConnectEmbeds() {
           privacyPolicyUrl="/#"
           termsOfServiceUrl="/#"
           showThirdwebBranding={false}
+          style={{
+            border: "transparent",
+            padding: "11px",
+          }}
+          className="border border-gray-300 rounded-lg max-w-sm w-full text-zinc-950"
         />
       </div>
     </div>

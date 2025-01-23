@@ -5,6 +5,14 @@ import React from "react";
 import Image from "next/image";
 import { polygon, base, baseSepolia } from "thirdweb/chains";
 import { ConnectButton, ConnectEmbed, useActiveAccount } from "thirdweb/react";
+import {
+  useActiveWallet,
+  useAutoConnect,
+  useConnect,
+  useConnectModal,
+  useDisconnect,
+} from "thirdweb/react";
+import { createWallet, inAppWallet } from "thirdweb/wallets";
 
 // Blockchain configurations
 import { detailsButton } from "@/config/details";
@@ -80,9 +88,134 @@ const ConnectEmbedPage: React.FC = () => {
   // Default UI when the wallet is not connected
   return (
     <ErrorBoundary>
-      <div className="p-2">
+      <div className="">
         <SignInLayout>
-          <ConnectEmbeds />
+          <div className="flex items-center pt-3 px-[3rem] w-full">
+            <div className="w-full space-y-6">
+              {/* Tombol Login */}
+              <div className="space-y-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <button className="bg-transparent border text-sm border-gray-300 text-gray-700 px-4 rounded-xl flex items-center justify-center gap-2 shadow-sm hover:bg-slate-100">
+                    <Image
+                      src="/erc20-icons/mem0ra.png"
+                      alt="Google"
+                      width={40} // Ganti dengan lebar yang sesuai
+                      height={45} // Ganti dengan tinggi yang sesuai
+                      className="object-contain"
+                    />
+                    Log in with Google
+                  </button>
+                  <button className="bg-transparent border text-sm border-gray-300 text-gray-700 px-4 rounded-xl flex items-center justify-center gap-2 shadow-sm hover:bg-slate-100">
+                    <Image
+                      src="/erc20-icons/mem0ra.png"
+                      alt="Apple"
+                      width={40} // Ganti dengan lebar yang sesuai
+                      height={45} // Ganti dengan tinggi yang sesuai
+                      className="object-contain"
+                    />
+                    Log in with Apple
+                  </button>
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <button className="bg-transparent border text-sm border-gray-300 text-gray-700 px-4 rounded-xl flex items-center justify-center gap-2 shadow-sm hover:bg-slate-100">
+                    <Image
+                      src="/erc20-icons/mem0ra.png"
+                      alt="Facebook"
+                      width={40} // Ganti dengan lebar yang sesuai
+                      height={45} // Ganti dengan tinggi yang sesuai
+                      className="object-contain"
+                    />
+                    Log in with Facebook
+                  </button>
+                  <button className="bg-transparent border text-sm border-gray-300 text-gray-700 px-4 rounded-xl flex items-center justify-center gap-2 shadow-sm hover:bg-slate-100">
+                    <Image
+                      src="/erc20-icons/mem0ra.png"
+                      alt="Twitter"
+                      width={40} // Ganti dengan lebar yang sesuai
+                      height={45} // Ganti dengan tinggi yang sesuai
+                      className="object-contain"
+                    />
+                    Log in with Twitter
+                  </button>
+                </div>
+              </div>
+
+              {/* Divider */}
+              <div className="flex items-center gap-4">
+                <hr className="flex-grow border-gray-300" />
+                <span className="text-sm text-gray-500">or</span>
+                <hr className="flex-grow border-gray-300" />
+              </div>
+
+              {/* Form */}
+              <div className="space-y-4">
+                {/* <input
+                  type="email"
+                  placeholder="Email Address"
+                  className="w-full px-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <input
+                  type="tel"
+                  placeholder="Phone Number"
+                  className="w-full px-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                /> */}
+                <button className="bg-transparent border text-sm border-gray-300 text-gray-700 px-4 py-1.5 rounded-xl flex items-center gap-2 w-full shadow-sm hover:bg-slate-100">
+                  <Image
+                    src="/erc20-icons/mem0ra.png"
+                    alt="Twitter"
+                    width={40} // Ganti dengan lebar yang sesuai
+                    height={45} // Ganti dengan tinggi yang sesuai
+                    className="object-contain"
+                  />
+                  Email Address
+                </button>
+                <button className="bg-transparent border text-sm border-gray-300 text-gray-700 px-4 py-1.5 rounded-xl flex items-center gap-2 w-full shadow-sm hover:bg-slate-100">
+                  <Image
+                    src="/erc20-icons/mem0ra.png"
+                    alt="Twitter"
+                    width={40} // Ganti dengan lebar yang sesuai
+                    height={45} // Ganti dengan tinggi yang sesuai
+                    className="object-contain"
+                  />
+                  Phone Number
+                </button>
+                <button className="bg-transparent border text-sm border-gray-300 text-gray-700 px-4 py-1.5 rounded-xl flex items-center gap-2 w-full shadow-sm hover:bg-slate-100">
+                  <Image
+                    src="/erc20-icons/mem0ra.png"
+                    alt="Twitter"
+                    width={40} // Ganti dengan lebar yang sesuai
+                    height={45} // Ganti dengan tinggi yang sesuai
+                    className="object-contain"
+                  />
+                  Passkey
+                </button>
+                <button className="bg-transparent border text-sm border-gray-300 text-gray-700 px-4 py-1.5 rounded-xl flex items-center gap-2 w-full shadow-sm hover:bg-slate-100">
+                  <Image
+                    src="/erc20-icons/mem0ra.png"
+                    alt="Twitter"
+                    width={40} // Ganti dengan lebar yang sesuai
+                    height={45} // Ganti dengan tinggi yang sesuai
+                    className="object-contain"
+                  />
+                  Connect Wallet
+                </button>
+              </div>
+
+              {/* Footer */}
+              <div className="text-xs text-gray-500 text-left">
+                By connecting, you agree to the{" "}
+                <a href="/terms" className="text-blue-500 hover:underline">
+                  Terms of Service
+                </a>{" "}
+                &{" "}
+                <a href="/privacy" className="text-blue-500 hover:underline">
+                  Privacy Policy
+                </a>
+                .
+              </div>
+            </div>
+          </div>
+          {/* <ConnectEmbeds /> */}
         </SignInLayout>
       </div>
     </ErrorBoundary>
@@ -91,12 +224,12 @@ const ConnectEmbedPage: React.FC = () => {
 
 function SignInLayout(props: { children: React.ReactNode }) {
   return (
-    <div className="w-full lg:grid lg:grid-cols-2">
+    <div className="w-full lg:grid lg:grid-cols-[55%_45%]">
       <div className="relative h-screen hidden lg:block">
         <Image
           src={art}
           alt="Bukhari Islamic Art Background for Login Page."
-          className="absolute inset-0 w-full h-full object-contain"
+          className="absolute inset-0 w-full h-full object-fill"
           priority
         />
       </div>
@@ -109,11 +242,11 @@ function SignInLayout(props: { children: React.ReactNode }) {
               className="z-0 object-contain w-full"
               priority
             />
-            <h1 className="flex text-left text-lg md:text-xl lg:text-2xl xl:text-3xl font-normal tracking-tighter justify-start align-middle px-[4vh] md:px-[7vh]">
+            <h1 className="flex text-left text-xl md:text-2xl lg:text-3xl xl:text-5xl font-normal tracking-tighter justify-start align-middle px-[3rem] pb-4">
               Get Ready!
             </h1>
-            <h2 className="flex text-left text-xs md:text-sm lg:text-base xl:text-lg font-medium tracking-tighter justify-start align-middle px-[4vh] md:px-[7vh]">
-              Register Now to Immerse Yourself in Galeri Harmoni Istiqlal
+            <h2 className="flex text-left text-xs md:text-sm lg:text-base xl:text-lg tracking-tighter justify-start align-middle px-[3rem]">
+              Register now to immerse yourself in Galeri Harmoni Istiqlal
               Digital Experience
             </h2>
           </div>
@@ -128,6 +261,96 @@ function SignInLayout(props: { children: React.ReactNode }) {
           </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+// Create a custom login flow with social login
+function GoogleFlow() {
+  // Get active account and wallet
+  const account = useActiveAccount();
+  const connectedWallet = useActiveWallet();
+
+  // Get connect and disconnect functions
+  const { connect } = useConnect();
+  const { disconnect } = useDisconnect();
+
+  // Create In-App Wallet with social login and connect
+  const handleLogin = async () => {
+    await connect(async () => {
+      const wallet = inAppWallet();
+      await wallet.connect({
+        client: client,
+        strategy: "google",
+      });
+      return wallet;
+    });
+  };
+
+  return (
+    <div className="flex flex-col items-center mb-10 md:mb-10">
+      {account && connectedWallet ? (
+        <button
+          className="bg-red-500 text-white-400 px-4 rounded-xl"
+          onClick={() => disconnect(connectedWallet)}
+        >
+          Disconnect
+        </button>
+      ) : (
+        <>
+          <button
+            className="bg-transparent px-4 rounded-xl border border-gray-600"
+            onClick={handleLogin}
+          >
+            Log in with Google
+          </button>
+        </>
+      )}
+    </div>
+  );
+}
+
+// Create a custom login flow with social login
+function AppleFlow() {
+  // Get active account and wallet
+  const account = useActiveAccount();
+  const connectedWallet = useActiveWallet();
+
+  // Get connect and disconnect functions
+  const { connect } = useConnect();
+  const { disconnect } = useDisconnect();
+
+  // Create In-App Wallet with social login and connect
+  const handleLogin = async () => {
+    await connect(async () => {
+      const wallet = inAppWallet();
+      await wallet.connect({
+        client: client,
+        strategy: "apple",
+      });
+      return wallet;
+    });
+  };
+
+  return (
+    <div className="flex flex-col items-center mb-10 md:mb-10">
+      {account && connectedWallet ? (
+        <button
+          className="bg-red-500 text-white-400 px-4 rounded-xl"
+          onClick={() => disconnect(connectedWallet)}
+        >
+          Disconnect
+        </button>
+      ) : (
+        <>
+          <button
+            className="bg-transparent px-4 rounded-xl border border-gray-600"
+            onClick={handleLogin}
+          >
+            Log in with Apple
+          </button>
+        </>
+      )}
     </div>
   );
 }

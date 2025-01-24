@@ -40,7 +40,7 @@ const SouvenirDetails: React.FC = () => {
 
   React.useEffect(() => {
     if (!tokenId) {
-      router.push("/free"); // Redirect to the main page
+      router.push("/"); // Redirect to the main page
     }
   }, [tokenId, router]);
 
@@ -109,11 +109,11 @@ const SouvenirDetails: React.FC = () => {
             COLLECT IT!
           </ClaimButton>
         </div>
-        <Link href="/free">
+        <Link href="/">
           <button
             type="button"
             className="w-full rounded-lg p-2 border-2 border-solid border-transparent hover:border-zinc-950 text-neutral-200 hover:text-zinc-950 bg-zinc-950 hover:bg-neutral-200 transition-colors duration-300 ease-in-out text-sm leading-4 font-normal uppercase my-1">
-            Back to Souvenirs List
+            Back to Home
           </button>
         </Link>
       </div>

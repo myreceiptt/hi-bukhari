@@ -101,7 +101,7 @@ const NFTLister: React.FC<NFTListerProps> = (props: NFTListerProps) => {
                 Own {ownedNfts?.toString() || "0"} Edition
               </h2>
 
-              <Link href={`/free/${props.tokenId}`}>
+              <Link href={`/token/${props.tokenId}`}>
                 <button className="w-full rounded-lg p-2 border-2 border-solid border-transparent hover:border-zinc-950 text-neutral-200 hover:text-zinc-950 bg-zinc-950 hover:bg-neutral-200 transition-colors duration-300 ease-in-out text-sm leading-4 font-normal uppercase my-1">
                   VIEW DETAILS!
                 </button>

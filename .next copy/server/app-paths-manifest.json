@@ -1,8 +1,0 @@
-{
-  "/free/page": "app/free/page.js",
-  "/token/[tokenId]/page": "app/token/[tokenId]/page.js",
-  "/page": "app/page.js",
-  "/terms/page": "app/terms/page.js",
-  "/privacy/page": "app/privacy/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js"
-}

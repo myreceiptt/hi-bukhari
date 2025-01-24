@@ -292,16 +292,14 @@ function GoogleFlow() {
       {account && connectedWallet ? (
         <button
           className="bg-red-500 text-white-400 px-4 rounded-xl"
-          onClick={() => disconnect(connectedWallet)}
-        >
+          onClick={() => disconnect(connectedWallet)}>
           Disconnect
         </button>
       ) : (
         <>
           <button
             className="bg-transparent px-4 rounded-xl border border-gray-600"
-            onClick={handleLogin}
-          >
+            onClick={handleLogin}>
             Log in with Google
           </button>
         </>
@@ -337,16 +335,14 @@ function AppleFlow() {
       {account && connectedWallet ? (
         <button
           className="bg-red-500 text-white-400 px-4 rounded-xl"
-          onClick={() => disconnect(connectedWallet)}
-        >
+          onClick={() => disconnect(connectedWallet)}>
           Disconnect
         </button>
       ) : (
         <>
           <button
             className="bg-transparent px-4 rounded-xl border border-gray-600"
-            onClick={handleLogin}
-          >
+            onClick={handleLogin}>
             Log in with Apple
           </button>
         </>

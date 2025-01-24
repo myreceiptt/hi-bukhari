@@ -1,3 +1,4 @@
+// External libraries
 import Link from "next/link";
 import Image from "next/image";
 
@@ -14,7 +15,7 @@ export default function FeaturedCards() {
           {
             href: "/paid",
             src: "/bukhari-fa-login-02-3.png",
-            overlay: "/overlay-image-3.png", // Overlay image path
+            overlay: "/overlay-image-3.png",
             alt: "Affordable Exclusive Digital Souvenir",
           },
           {

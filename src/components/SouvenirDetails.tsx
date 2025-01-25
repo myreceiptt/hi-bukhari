@@ -23,6 +23,7 @@ const SouvenirDetails: React.FC = () => {
   const backButton = () => {
     router.back();
   };
+
   const tokenId = params.tokenId;
   const smartAccount = useActiveAccount();
   const [pesanSukses, setPesanSukses] = React.useState<string | null>(null);

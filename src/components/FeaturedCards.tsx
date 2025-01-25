@@ -25,7 +25,7 @@ export default function FeaturedCards() {
             alt: "Free Exclusive Digital Souvenir",
           },
           {
-            href: "/#",
+            href: "/redeem",
             src: "/bukhari-fa-login-02-1.png",
             overlay: "/overlay-image-1.png",
             alt: "Redeem Priceless Coins Reward",

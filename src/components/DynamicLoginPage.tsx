@@ -1,6 +1,7 @@
 // External libraries
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ConnectButton, useActiveAccount } from "thirdweb/react";
 
 // Blockchain configurations
@@ -30,14 +31,16 @@ const DynamicLoginPage: React.FC<DynamicLoginPageProps> = ({
     return (
       <div className="flex flex-col gap-4 px-0 md:px-20 m-4 items-center h-screen">
         <div>
-          <Image
-            src="/bukhari-fa-login-04.png"
-            alt="Bukhari Islamic Art Banner with Partners Logo."
-            width={474}
-            height={474}
-            className="z-0 object-contain w-full"
-            priority
-          />
+          <Link href="/">
+            <Image
+              src="/bukhari-fa-login-04.png"
+              alt="Bukhari Islamic Art Banner with Partners Logo."
+              width={474}
+              height={474}
+              className="z-0 object-contain w-full"
+              priority
+            />
+          </Link>
         </div>
         <div id="connected">
           <ConnectButton
@@ -55,14 +58,16 @@ const DynamicLoginPage: React.FC<DynamicLoginPageProps> = ({
           <ContentComponent />
         </div>
         <div>
-          <Image
-            src="/bukhari-fa-login-06.png"
-            alt="Bukhari Islamic Art Powered by VOYAGE."
-            width={474}
-            height={474}
-            className="z-0 object-contain w-full"
-            priority
-          />
+          <Link href="https://voyage.co.id/" target="_blank">
+            <Image
+              src="/bukhari-fa-login-06.png"
+              alt="Bukhari Islamic Art Powered by VOYAGE."
+              width={474}
+              height={474}
+              className="z-0 object-contain w-full"
+              priority
+            />
+          </Link>
         </div>
       </div>
     );

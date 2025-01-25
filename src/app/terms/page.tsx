@@ -3,6 +3,18 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+// Blockchain configurations
+import {
+  entityMonth,
+  entityDate,
+  entityYear,
+  entityName,
+  entityAlias1,
+  entityAlias2,
+  entityAddress,
+  entityEmail,
+} from "@/config/osloid";
+
 export default function Terms() {
   return (
     <div className="flex flex-col items-center gap-8 px-4 md:px-20 py-8">
@@ -24,7 +36,7 @@ export default function Terms() {
             Terms and Conditions of Use
           </h1>
           <h2 className="text-sm md:text-base lg:text-lg font-normal text-gray-600">
-            Last updated on [MONTH] [DATE], [YEAR].
+            Last updated on {entityMonth} {entityDate}, {entityYear}.
           </h2>
         </div>
 
@@ -35,14 +47,13 @@ export default function Terms() {
           </h3>
           <p className="text-sm md:text-base leading-relaxed">
             This web application and/or mobile application is operated by
-            [ENTITY NAME/PERSON]. Throughout the application, the terms
-            &quot;we,&quot; &quot;us,&quot; and &quot;our&quot; refer to [ENTITY
-            NAME/PERSON], also referred to as [ENTITY/PERSON ALIAS #1] and
-            [ENTITY/PERSON ALIAS #2]. [ENTITY/PERSON NAME] offers this
-            application, including all information, tools, and services
-            available from this application to you, the user, conditioned upon
-            your acceptance of all terms, conditions, policies, and notices
-            stated here.
+            {entityName}. Throughout the application, the terms &quot;we,&quot;
+            &quot;us,&quot; and &quot;our&quot; refer to {entityName}, also
+            referred to as {entityAlias1} and {entityAlias2}. {entityName}{" "}
+            offers this application, including all information, tools, and
+            services available from this application to you, the user,
+            conditioned upon your acceptance of all terms, conditions, policies,
+            and notices stated here.
           </p>
           <p className="text-sm md:text-base leading-relaxed">
             By visiting our application and/or purchasing something from us, you
@@ -209,36 +220,35 @@ export default function Terms() {
           </p>
           <p className="text-sm md:text-base leading-relaxed">
             You accept that there are no explicit or implicit obligations for
-            [ENTITY NAME/PERSON] to undertake activities or work during your
-            period of control of the NFT artworks, and in particular:
+            {entityName} to undertake activities or work during your period of
+            control of the NFT artworks, and in particular:
           </p>
           <ul className="list-disc list-outside space-y-2">
             <li className="text-sm md:text-base leading-relaxed">
-              There is no obligation for [ENTITY NAME/PERSON] to provide or
-              maintain any service.
+              There is no obligation for {entityName} to provide or maintain any
+              service.
             </li>
             <li className="text-sm md:text-base leading-relaxed">
-              There is no obligation for [ENTITY NAME/PERSON] to provide any
-              work.
+              There is no obligation for {entityName} to provide any work.
             </li>
             <li className="text-sm md:text-base leading-relaxed">
-              There is no obligation for [ENTITY NAME/PERSON] to change the form
-              or functionality of that artwork.
+              There is no obligation for {entityName} to change the form or
+              functionality of that artwork.
             </li>
             <li className="text-sm md:text-base leading-relaxed">
-              There is no obligation for [ENTITY NAME/PERSON] to support or
-              maintain any value of the NFT and associated artworks.
+              There is no obligation for {entityName} to support or maintain any
+              value of the NFT and associated artworks.
             </li>
             <li className="text-sm md:text-base leading-relaxed">
-              There is no obligation for [ENTITY NAME/PERSON] to produce any
-              marketing effort to promote the NFTs, the artworks, the brand
-              name, or anything related to the NFT that you bought from us.
+              There is no obligation for {entityName} to produce any marketing
+              effort to promote the NFTs, the artworks, the brand name, or
+              anything related to the NFT that you bought from us.
             </li>
           </ul>
           <p className="text-sm md:text-base leading-relaxed">
             As a result, you agree that you do not have any expectation of work
-            to be produced by [ENTITY NAME/PERSON] in connection to the NFTs
-            that you bought from us.
+            to be produced by {entityName} in connection to the NFTs that you
+            bought from us.
           </p>
         </section>
         <section className="space-y-4">
@@ -317,10 +327,10 @@ export default function Terms() {
               and Internet connections; the risk of malicious software
               introduction; and the risk that third parties may obtain
               unauthorized access to information stored within your wallet. You
-              accept and acknowledge that [ENTITY NAME/PERSON] will not be
-              responsible for any communication failures, disruptions, errors,
-              distortions, or delays that you may experience when using our
-              services or products, however caused.
+              accept and acknowledge that {entityName} will not be responsible
+              for any communication failures, disruptions, errors, distortions,
+              or delays that you may experience when using our services or
+              products, however caused.
             </li>
             <li className="text-sm md:text-base leading-relaxed">
               The regulatory regime governing NFTs and cryptocurrencies is
@@ -474,11 +484,11 @@ export default function Terms() {
             title, and non-infringement.
           </p>
           <p className="text-sm md:text-base leading-relaxed">
-            In no case shall [ENTITY NAME/PERSON], our directors, officers,
-            employees, affiliates, agents, contractors, interns, shareholders,
-            suppliers, service providers, or licensees be liable for any injury,
-            loss, claim, or any direct, indirect, incidental, punitive, special,
-            or consequential damages of any kind, including, without limitation,
+            In no case shall {entityName}, our directors, officers, employees,
+            affiliates, agents, contractors, interns, shareholders, suppliers,
+            service providers, or licensees be liable for any injury, loss,
+            claim, or any direct, indirect, incidental, punitive, special, or
+            consequential damages of any kind, including, without limitation,
             lost profits, lost revenue, lost savings, loss of data, replacement
             costs, or any similar damages, whether based in contract, tort
             (including negligence), strict liability, or otherwise, arising from
@@ -500,14 +510,14 @@ export default function Terms() {
             SECTION 12 – INDEMNIFICATION
           </h3>
           <p className="text-sm md:text-base leading-relaxed">
-            You agree to indemnify, defend, and hold harmless [ENTITY
-            NAME/PERSON] and our parent, subsidiaries, affiliates, partners,
-            officers, directors, shareholders, agents, contractors, licensees,
-            service providers, subcontractors, suppliers, interns, and employees
-            from any claim or demand, including reasonable attorneys’ fees, made
-            by any third party due to or arising out of your breach of these
-            Terms, the documents they incorporate by reference, or your
-            violation of any law or the rights of a third party.
+            You agree to indemnify, defend, and hold harmless {entityName} and
+            our parent, subsidiaries, affiliates, partners, officers, directors,
+            shareholders, agents, contractors, licensees, service providers,
+            subcontractors, suppliers, interns, and employees from any claim or
+            demand, including reasonable attorneys’ fees, made by any third
+            party due to or arising out of your breach of these Terms, the
+            documents they incorporate by reference, or your violation of any
+            law or the rights of a third party.
           </p>
         </section>
         <section className="space-y-4">
@@ -579,24 +589,23 @@ export default function Terms() {
             All claims and disputes that cannot be settled informally or through
             the Republic of Indonesia Small Claims Tribunal shall be resolved by
             binding arbitration, as described below. This arbitration agreement
-            applies to you and [ENTITY NAME/PERSON], including its directors,
-            officers, employees, affiliates, agents, contractors, interns,
-            shareholders, suppliers, service providers, licensees, successors,
-            or assigns.
+            applies to you and {entityName}, including its directors, officers,
+            employees, affiliates, agents, contractors, interns, shareholders,
+            suppliers, service providers, licensees, successors, or assigns.
           </p>
           <p className="text-sm md:text-base leading-relaxed">
             Before either party seeks arbitration, the party must send a Notice
             of Dispute describing the nature and basis of the claim or dispute
-            and the requested relief. A Notice of Dispute to [ENTITY
-            NAME/PERSON] should be sent by registered mail to our address in the
-            real world at [ENTITY ADDRESS/PERSON IN REAL WORLD]. If the claim is
-            unresolved within 30 days, either party may begin an arbitration
-            proceeding. Any dispute, controversy, difference, or claim arising
-            out of or relating to this contract—including the existence,
-            validity, interpretation, performance, breach, or termination
-            thereof, or any dispute regarding non-contractual obligations
-            arising out of or relating to it—shall be referred to and finally
-            resolved by arbitration administered by the BANI Arbitration Center
+            and the requested relief. A Notice of Dispute to {entityName} should
+            be sent by registered mail to our address in the real world at{" "}
+            {entityAddress}. If the claim is unresolved within 30 days, either
+            party may begin an arbitration proceeding. Any dispute, controversy,
+            difference, or claim arising out of or relating to this
+            contract—including the existence, validity, interpretation,
+            performance, breach, or termination thereof, or any dispute
+            regarding non-contractual obligations arising out of or relating to
+            it—shall be referred to and finally resolved by arbitration
+            administered by the BANI Arbitration Center
             (https://baniarbitration.org/) under the BANI Administered
             Arbitration Rules in force when the Notice of Arbitration is
             submitted.
@@ -621,7 +630,7 @@ export default function Terms() {
             Small Claims Tribunal:
           </p>
           <p className="text-sm md:text-base leading-relaxed">
-            Notwithstanding the foregoing, either you or [ENTITY NAME/PERSON]
+            Notwithstanding the foregoing, either you or {entityName}
             may bring an individual action in the Small Claims Tribunal of the
             Republic of Indonesia.
           </p>
@@ -648,8 +657,7 @@ export default function Terms() {
             SECTION 17 - CONTACT INFORMATION
           </h3>
           <p className="text-sm md:text-base leading-relaxed">
-            Questions about the Terms should be sent to us at: [ENTITY
-            EMAIL/PERSON].
+            Questions about the Terms should be sent to us at: {entityEmail}.
           </p>
         </section>
 

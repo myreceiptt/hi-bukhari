@@ -3,6 +3,17 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+// Blockchain configurations
+import {
+  entityMonth,
+  entityDate,
+  entityYear,
+  entityName,
+  entityAlias1,
+  entityAlias2,
+  entityEmail,
+} from "@/config/osloid";
+
 export default function Privacy() {
   return (
     <div className="flex flex-col items-center gap-8 px-4 md:px-20 py-8">
@@ -24,7 +35,7 @@ export default function Privacy() {
             Privacy Policy
           </h1>
           <h2 className="text-sm md:text-base lg:text-lg font-normal text-gray-600">
-            Last updated on [MONTH] [DATE], [YEAR].
+            Last updated on {entityMonth} {entityDate}, {entityYear}.
           </h2>
         </div>
 
@@ -34,14 +45,13 @@ export default function Privacy() {
             Overview
           </h3>
           <p className="text-sm md:text-base leading-relaxed">
-            This website is operated by [ENTITY NAME/PERSON]. Throughout the
-            application, the terms “we,” “us,” and “our” refer to [ENTITY
-            NAME/PERSON], also referred to as [ENTITY NAME/PERSON ALIAS #1] and
-            [ENTITY NAME/PERSON ALIAS #2]. [ENTITY NAME/PERSON] offers this
-            application, including all information, tools, and services
-            available from this application, to you, the user, conditioned upon
-            your acceptance of all terms, conditions, policies, and notices
-            stated here.
+            This website is operated by {entityName}. Throughout the
+            application, the terms “we,” “us,” and “our” refer to {entityName},
+            also referred to as {entityAlias1} and {entityAlias2}. {entityName}{" "}
+            offers this application, including all information, tools, and
+            services available from this application, to you, the user,
+            conditioned upon your acceptance of all terms, conditions, policies,
+            and notices stated here.
           </p>
           <p className="text-sm md:text-base leading-relaxed">
             By visiting our application, you engage in our “Service” and agree
@@ -67,20 +77,20 @@ export default function Privacy() {
             PRIVACY POLICY
           </h3>
           <p className="text-sm md:text-base leading-relaxed">
-            [ENTITY NAME/PERSON] promotes web3 technology through our
-            application as well as through various third-party websites and
-            platforms. We have adopted this Privacy Policy to guide you through
-            the collection, use, retention, and disclosure of Personally
-            Identifiable Information (“Personal Data,” as further described
-            below) that you may provide while using the [ENTITY NAME/PERSON]
+            {entityName} promotes web3 technology through our application as
+            well as through various third-party websites and platforms. We have
+            adopted this Privacy Policy to guide you through the collection,
+            use, retention, and disclosure of Personally Identifiable
+            Information (“Personal Data,” as further described below) that you
+            may provide while using the {entityName}
             application and services in connection with these platforms
             (collectively referred to as “Services”).
           </p>
           <p className="text-sm md:text-base leading-relaxed">
-            [ENTITY NAME/PERSON] encourages you to read this Privacy Policy, as
-            well as our Terms and Conditions of Use, to understand how we
-            collect and process Personal Data in the course of providing the
-            Services and your interaction with the Services.
+            {entityName} encourages you to read this Privacy Policy, as well as
+            our Terms and Conditions of Use, to understand how we collect and
+            process Personal Data in the course of providing the Services and
+            your interaction with the Services.
           </p>
           <p className="text-sm md:text-base leading-relaxed">
             By using the Services, you consent to the collection, use,
@@ -112,7 +122,7 @@ export default function Privacy() {
             identify a person.
           </p>
           <p className="text-sm md:text-base leading-relaxed">
-            [ENTITY NAME/PERSON] may collect Personal Data, including, without
+            {entityName} may collect Personal Data, including, without
             limitation, your name, email address, IP address, and device
             identifiers and/or geolocation information, in the course of its
             Services and may use or disclose that Personal Data as described in
@@ -126,7 +136,7 @@ export default function Privacy() {
             aggregated, anonymous information to provide data about the Services
             to advertisers, potential business partners, and other unaffiliated
             entities. As this information does not identify a person and is
-            therefore not Personal Data, [ENTITY NAME/PERSON], when using such
+            therefore not Personal Data, {entityName}, when using such
             aggregated, anonymized, and/or de-identified data, is not subject to
             this Privacy Policy.
           </p>
@@ -224,8 +234,8 @@ export default function Privacy() {
             Once you leave our application or are redirected to a third-party
             application, you are no longer governed by this Privacy Policy or
             our application&apos;s Terms and Conditions of Use. The following is
-            a list of Data Processors engaged by [ENTITY NAME/PERSON] who may
-            receive Personal Data:
+            a list of Data Processors engaged by {entityName} who may receive
+            Personal Data:
           </p>
           <ol className="list-decimal list-outside space-y-2">
             <li className="text-sm md:text-base leading-relaxed">GitHub.com</li>
@@ -287,21 +297,20 @@ export default function Privacy() {
             SECTION 7 - TRANSFER OF YOUR DATA TO OTHER COUNTRIES
           </h3>
           <p className="text-sm md:text-base leading-relaxed">
-            The data that [ENTITY NAME/PERSON] processes, as well as data
-            processed by associated services and providers, may be stored on
-            servers located in the USA, Canada, Europe, and/or elsewhere. It may
-            be stored in multiple locations. However, we ensure that regardless
-            of where it is stored, your data is stored in a way that is
-            consistent with the standards of protection required under
-            applicable law.
+            The data that {entityName} processes, as well as data processed by
+            associated services and providers, may be stored on servers located
+            in the USA, Canada, Europe, and/or elsewhere. It may be stored in
+            multiple locations. However, we ensure that regardless of where it
+            is stored, your data is stored in a way that is consistent with the
+            standards of protection required under applicable law.
           </p>
           <p className="text-sm md:text-base leading-relaxed">
             Where Personal Data is transferred from the European Economic Area
             to a country that has not received an adequacy decision by the
-            European Commission, [ENTITY NAME/PERSON] relies on appropriate
-            safeguards, such as the European Commission-approved Standard
-            Contractual Clauses and EU-U.S. Privacy Shield Frameworks, to
-            transfer the Personal Data.
+            European Commission, {entityName} relies on appropriate safeguards,
+            such as the European Commission-approved Standard Contractual
+            Clauses and EU-U.S. Privacy Shield Frameworks, to transfer the
+            Personal Data.
           </p>
           <p className="text-sm md:text-base leading-relaxed">
             By using our Services and submitting your Personal Data, you agree
@@ -334,9 +343,9 @@ export default function Privacy() {
             SECTION 9 – RIGHTS CONCERNING PERSONAL DATA
           </h3>
           <p className="text-sm md:text-base leading-relaxed">
-            [ENTITY NAME/PERSON] is committed to ensuring you retain full access
-            to and control of your Personal Data. To that end, we endeavor to
-            respect your right to be informed regarding the collection, use, and
+            {entityName} is committed to ensuring you retain full access to and
+            control of your Personal Data. To that end, we endeavor to respect
+            your right to be informed regarding the collection, use, and
             disclosure of Personal Data, as well as your right to correction and
             access to it, via this Privacy Statement.
           </p>
@@ -344,21 +353,21 @@ export default function Privacy() {
             If you would like to access, correct, remove, request a copy of,
             withdraw consent to the collection of your Personal Data, or are
             seeking additional information on how your Personal Data may be
-            collected, used, or disclosed by [ENTITY NAME/PERSON], please
-            contact our Privacy Compliance Officer (see contact details at the
-            end of this page). Subject to certain exceptions and limitations
-            that may be prescribed by applicable law, you will be provided with
-            reasonable access to your data and will be entitled to have it
-            amended or corrected as appropriate.
+            collected, used, or disclosed by {entityName}, please contact our
+            Privacy Compliance Officer (see contact details at the end of this
+            page). Subject to certain exceptions and limitations that may be
+            prescribed by applicable law, you will be provided with reasonable
+            access to your data and will be entitled to have it amended or
+            corrected as appropriate.
           </p>
           <p className="text-sm md:text-base leading-relaxed">
             In certain circumstances, you may have the right to have your data,
-            or certain components of your Personal Data, erased by [ENTITY
-            NAME/PERSON], to have your data moved, copied, or transmitted from
-            our systems to other systems, or to object to or restrict certain
-            processing of your data by us. If you wish to inquire about or seek
-            to exercise any of these rights (as they may apply), please contact
-            our Privacy Compliance Officer at: [ENTITY EMAIL/PERSON].
+            or certain components of your Personal Data, erased by {entityName},
+            to have your data moved, copied, or transmitted from our systems to
+            other systems, or to object to or restrict certain processing of
+            your data by us. If you wish to inquire about or seek to exercise
+            any of these rights (as they may apply), please contact our Privacy
+            Compliance Officer at: {entityEmail}.
           </p>
         </section>
 

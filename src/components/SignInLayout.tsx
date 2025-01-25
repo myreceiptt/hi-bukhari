@@ -1,6 +1,7 @@
 // External libraries
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 // Image configurations
 import art from "../../public/bukhari-fa-login-02.png";
@@ -24,14 +25,16 @@ const SignInLayout: React.FC<{ children: React.ReactNode }> = ({
     <div className="flex items-center justify-center">
       <div className="w-full flex flex-col items-center">
         <div>
-          <Image
-            src={banner}
-            alt="Bukhari Islamic Art Banner with Partners Logo."
-            width={474}
-            height={474}
-            className="z-0 object-contain w-full"
-            priority
-          />
+          <Link href="/">
+            <Image
+              src={banner}
+              alt="Bukhari Islamic Art Banner with Partners Logo."
+              width={474}
+              height={474}
+              className="z-0 object-contain w-full"
+              priority
+            />
+          </Link>
           <h1 className="flex text-left text-lg md:text-xl lg:text-2xl xl:text-3xl font-normal tracking-tighter justify-start align-middle px-[4vh] md:px-[7vh]">
             Get Ready!
           </h1>
@@ -42,14 +45,16 @@ const SignInLayout: React.FC<{ children: React.ReactNode }> = ({
         </div>
         {children}
         <div>
-          <Image
-            src={powered}
-            alt="Bukhari Islamic Art Powered by VOYAGE."
-            width={474}
-            height={474}
-            className="z-0 object-contain w-full"
-            priority
-          />
+          <Link href="https://voyage.co.id/" target="_blank">
+            <Image
+              src={powered}
+              alt="Bukhari Islamic Art Powered by VOYAGE."
+              width={474}
+              height={474}
+              className="z-0 object-contain w-full"
+              priority
+            />
+          </Link>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
-//config/tokeks.ts
-import { polygon, base, baseSepolia } from "thirdweb/chains";
+// Blockchain configurations
+import { polygon, base, baseSepolia } from "@/config/rantais";
 
 export const detailsButton = {
   displayBalanceToken: {

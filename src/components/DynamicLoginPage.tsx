@@ -1,17 +1,21 @@
-// components/DynamicLoginPage.tsx
+// External libraries
 import React from "react";
 import Image from "next/image";
-import { polygon, base, baseSepolia } from "thirdweb/chains";
 import { ConnectButton, useActiveAccount } from "thirdweb/react";
+
+// Blockchain configurations
 import { client } from "@/config/client";
 import { detailsButton } from "@/config/details";
+import { polygon, base, baseSepolia } from "@/config/rantais";
+import { tekeks } from "@/config/tekeks";
 import { tokeks } from "@/config/tokeks";
 
-import SignInLayout from "./SignInLayout";
+// Components libraries
 import ConnectEmbeds from "./ConnectEmbeds";
 import { ErrorBoundary } from "./ErrorBoundary";
+import SignInLayout from "./SignInLayout";
 
-const rantais = [polygon, base, baseSepolia];
+const chains = [polygon, base, baseSepolia];
 
 interface DynamicLoginPageProps {
   ContentComponent: React.FC;
@@ -38,20 +42,13 @@ const DynamicLoginPage: React.FC<DynamicLoginPageProps> = ({
         <div id="connected">
           <ConnectButton
             client={client}
-            chains={rantais}
+            chains={chains}
             supportedTokens={tokeks}
             detailsButton={detailsButton}
             detailsModal={{
               assetTabs: ["token", "nft"],
             }}
-            supportedNFTs={{
-              [polygon.id]: ["0x0015C1dEb48c3aD0f5427cBbE81Cb36366F1621D"],
-              [base.id]: ["0x1925B991C5e2eC45BA1f34786BAd405d58202140"],
-              [baseSepolia.id]: [
-                "0xc3046681149f96746b362a64472fD4B1cd1E33B2",
-                "0x045C2bC19d61B7527B1d996548B67B2Fa8cD68e1",
-              ],
-            }}
+            supportedNFTs={tekeks}
           />
         </div>
         <div className="flex flex-col gap-4 content-normal px-0 md:px-20 m-4">

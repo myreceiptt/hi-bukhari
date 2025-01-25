@@ -1,6 +1,8 @@
-// components/SignInLayout.tsx
+// External libraries
 import React from "react";
 import Image from "next/image";
+
+// Image configurations
 import art from "../../public/bukhari-fa-login-02.png";
 import banner from "../../public/bukhari-fa-login-04.png";
 import powered from "../../public/bukhari-fa-login-06.png";

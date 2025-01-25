@@ -1,7 +1,9 @@
-// components/ConnectEmbeds.tsx
+// External libraries
 import React from "react";
-import { polygon, base, baseSepolia } from "thirdweb/chains";
+import { base } from "thirdweb/chains";
 import { ConnectEmbed } from "thirdweb/react";
+
+// Blockchain configurations
 import { client } from "@/config/client";
 import { dompets } from "@/config/dompets";
 

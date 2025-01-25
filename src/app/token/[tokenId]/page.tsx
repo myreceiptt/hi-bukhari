@@ -7,8 +7,8 @@ import React from "react";
 import DynamicLoginPage from "@/components/DynamicLoginPage";
 import SouvenirDetails from "@/components/SouvenirDetails";
 
-const SouvenirDetailsPage: React.FC = () => (
+const PageToken: React.FC = () => (
   <DynamicLoginPage ContentComponent={() => <SouvenirDetails />} />
 );
 
-export default SouvenirDetailsPage;
+export default PageToken;

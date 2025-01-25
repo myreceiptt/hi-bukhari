@@ -3,9 +3,9 @@
 // External libraries
 import React from "react";
 
-// Components
-import FeaturedCards from "@/components/FeaturedCards";
+// Components libraries
 import DynamicLoginPage from "@/components/DynamicLoginPage";
+import FeaturedCards from "@/components/FeaturedCards";
 
 const PageHome: React.FC = () => (
   <DynamicLoginPage ContentComponent={FeaturedCards} />

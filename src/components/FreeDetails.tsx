@@ -1,7 +1,7 @@
 "use client";
 
 // External libraries
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { ThirdwebContract } from "thirdweb";
 import { balanceOf, getNFT } from "thirdweb/extensions/erc1155";

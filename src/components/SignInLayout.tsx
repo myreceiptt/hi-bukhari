@@ -22,7 +22,7 @@ const SignInLayout: React.FC<{ children: React.ReactNode }> = ({
         priority
       />
     </div>
-    <div className="w-full flex flex-col items-center justify-center h-screen px-12">
+    <div className="w-full flex flex-col items-center justify-center h-screen px-4 md:px-12">
       <div id="headers">
         <Link href="/">
           <Image

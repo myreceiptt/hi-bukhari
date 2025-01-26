@@ -30,7 +30,7 @@ const DynamicLoginPage: React.FC<DynamicLoginPageProps> = ({
   if (account) {
     return (
       <div className="flex flex-col gap-4 px-0 md:px-20 m-4 items-center h-screen">
-        <div>
+        <div id="headers">
           <Link href="/">
             <Image
               src="/bukhari-fa-login-04.png"
@@ -57,7 +57,7 @@ const DynamicLoginPage: React.FC<DynamicLoginPageProps> = ({
         <div className="flex flex-col gap-4 content-normal px-0 md:px-20 m-4">
           <ContentComponent />
         </div>
-        <div>
+        <div id="footers">
           <Link href="https://voyage.co.id/" target="_blank">
             <Image
               src="/bukhari-fa-login-06.png"

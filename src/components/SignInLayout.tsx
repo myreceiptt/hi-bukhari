@@ -22,8 +22,8 @@ const SignInLayout: React.FC<{ children: React.ReactNode }> = ({
         priority
       />
     </div>
-    <div className="w-full flex flex-col items-center justify-center h-screen">
-      <div>
+    <div className="w-full flex flex-col items-center justify-center h-screen px-12">
+      <div id="headers">
         <Link href="/">
           <Image
             src={banner}
@@ -34,16 +34,16 @@ const SignInLayout: React.FC<{ children: React.ReactNode }> = ({
             priority
           />
         </Link>
-        <h1 className="flex text-left text-lg md:text-xl lg:text-2xl xl:text-3xl font-normal tracking-tighter justify-start align-middle px-[4vh] md:px-[7vh]">
+        <h1 className="flex text-left text-lg md:text-xl lg:text-2xl xl:text-3xl font-normal tracking-tighter justify-start align-middle">
           Get Ready!
         </h1>
-        <h2 className="flex text-left text-xs md:text-sm lg:text-base xl:text-lg font-medium tracking-tighter justify-start align-middle px-[4vh] md:px-[7vh]">
+        <h2 className="flex text-left text-xs md:text-sm lg:text-base xl:text-lg font-medium tracking-tighter justify-start align-middle">
           Register Now to Immerse Yourself in Galeri Harmoni Istiqlal Digital
           Experience
         </h2>
       </div>
       {children}
-      <div>
+      <div id="footers">
         <Link href="https://voyage.co.id/" target="_blank">
           <Image
             src={powered}

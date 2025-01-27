@@ -7,9 +7,9 @@ import { inAppWallet } from "thirdweb/wallets";
 
 // Blockchain configurations
 import { client } from "@/config/client";
-import { polygon, base, baseSepolia } from "@/config/rantais";
+import { base } from "@/config/rantais";
 
-// Login flow using Google
+// Login flow using Googledfscx
 export default function GoogleFlow() {
   // Get active account and wallet
   const account = useActiveAccount();
@@ -26,8 +26,16 @@ export default function GoogleFlow() {
           chain: base,
           sponsorGas: true,
         },
+        metadata: {
+          image: {
+            src: "/logo/oslo.png",
+            alt: "My logo",
+            width: 100,
+            height: 100,
+          },
+        },
       });
-      await wallet.connect({
+      const account = await wallet.connect({
         client: client,
         chain: base,
         strategy: "google",

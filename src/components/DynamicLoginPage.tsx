@@ -15,6 +15,7 @@ import { tokeks } from "@/config/tokeks";
 import ConnectEmbeds from "./ConnectEmbeds";
 import { ErrorBoundary } from "./ErrorBoundary";
 import SignInLayout from "./SignInLayout";
+import { dompets } from "@/config/dompets";
 
 const chains = [polygon, base, baseSepolia];
 
@@ -45,13 +46,28 @@ const DynamicLoginPage: React.FC<DynamicLoginPageProps> = ({
         <div id="connected">
           <ConnectButton
             client={client}
+            appMetadata={{
+              name: "Login Bukhari Islamic Art Gallery",
+              url: "https://galeri.harmoniistiqlal.com",
+              description:
+                "Login to Bukhari Islamic Art Gallery in Harmoni Istiqlal.",
+              logoUrl:
+                "https://galeri.harmoniistiqlal.com/bukhari-fa-login-02.png",
+            }}
+            wallets={dompets}
+            accountAbstraction={{
+              factoryAddress: "0x82EC684C86b84AC60b5e162EC87d6DCF4213D468",
+              chain: base,
+              sponsorGas: true,
+            }}
             chains={chains}
             supportedTokens={tokeks}
+            supportedNFTs={tekeks}
             detailsButton={detailsButton}
             detailsModal={{
               assetTabs: ["token", "nft"],
             }}
-            supportedNFTs={tekeks}
+            theme="light"
           />
         </div>
         <div className="flex flex-col gap-4 content-normal px-0 md:px-20 m-4">

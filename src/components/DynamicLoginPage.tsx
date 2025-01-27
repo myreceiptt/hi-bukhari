@@ -7,6 +7,7 @@ import { ConnectButton, useActiveAccount } from "thirdweb/react";
 // Blockchain configurations
 import { client } from "@/config/client";
 import { detailsButton } from "@/config/details";
+import { dompets } from "@/config/dompets";
 import { polygon, base, baseSepolia } from "@/config/rantais";
 import { tekeks } from "@/config/tekeks";
 import { tokeks } from "@/config/tokeks";
@@ -15,7 +16,6 @@ import { tokeks } from "@/config/tokeks";
 import ConnectEmbeds from "./ConnectEmbeds";
 import { ErrorBoundary } from "./ErrorBoundary";
 import SignInLayout from "./SignInLayout";
-import { dompets } from "@/config/dompets";
 
 const chains = [polygon, base, baseSepolia];
 

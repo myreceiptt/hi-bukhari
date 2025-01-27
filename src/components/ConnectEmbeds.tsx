@@ -1,7 +1,7 @@
 // External libraries
 import React from "react";
 import Image from "next/image";
-import { ConnectEmbed } from "thirdweb/react";
+import { ConnectEmbed, lightTheme } from "thirdweb/react";
 
 // Blockchain configurations
 import { client } from "@/config/client";
@@ -9,7 +9,7 @@ import { dompets } from "@/config/dompets";
 import { base } from "@/config/rantais";
 
 // Logins libraries
-import GoogleFlow from "./Logins/Google";
+import GoogleFlow from "./logins/Google";
 
 const ConnectEmbeds: React.FC = () => {
   const embedStyle: React.CSSProperties = {
@@ -23,8 +23,8 @@ const ConnectEmbeds: React.FC = () => {
       id="logins"
       className="w-full h-auto flex flex-col justify-center items-center py-4">
       {/* <div className="w-full"> */}
-        {/* Tombol Login */}
-        {/* <div className="grid grid-cols-1 gap-4">
+      {/* Tombol Login */}
+      {/* <div className="grid grid-cols-1 gap-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <GoogleFlow />
             <button className="flex gap-4 items-center justify-start bg-transparent border border-gray-300 text-sm text-zinc-950 px-4 rounded-lg shadow-sm hover:bg-slate-100">
@@ -66,8 +66,8 @@ const ConnectEmbeds: React.FC = () => {
         client={client}
         modalSize="compact"
         header={{
-          title: "Please Login!",
-          titleIcon: "/logo/oslo.png",
+          title: "",
+          // titleIcon: "/logo/oslo.png",
         }}
         appMetadata={{
           name: "Login Bukhari Islamic Art Gallery",
@@ -85,7 +85,39 @@ const ConnectEmbeds: React.FC = () => {
         privacyPolicyUrl="/privacy"
         termsOfServiceUrl="/terms"
         showThirdwebBranding={false}
-        theme="light"
+        theme={lightTheme({
+          colors: {
+            // accentButtonBg: string;
+            // accentButtonText: string;
+            // accentText: string;
+            // borderColor: string;
+            // connectedButtonBg: string;
+            // connectedButtonBgHover: string;
+            // danger: string;
+            // inputAutofillBg: string;
+            // modalBg: string;
+            // modalOverlayBg: string;
+            // primaryButtonBg: string;
+            // primaryButtonText: string;
+            primaryText: "#707070",
+            // scrollbarBg: string;
+            // secondaryButtonBg: string;
+            // secondaryButtonHoverBg: string;
+            secondaryButtonText: "#707070",
+            // secondaryIconColor: string;
+            // secondaryIconHoverBg: string;
+            // secondaryIconHoverColor: string;
+            secondaryText: "#707070",
+            selectedTextBg: "#707070",
+            selectedTextColor: "#F9F9F9",
+            // separatorLine: string;
+            // skeletonBg: string;
+            // success: string;
+            // tertiaryBg: string;
+            // tooltipBg: string;
+            // tooltipText: "#707070",
+          },
+        })}
         style={embedStyle}
       />
     </div>

@@ -17,6 +17,6 @@
 
 @layer base {
 	body {
-		@apply text-zinc-950 bg-neutral-200;
+		@apply text-icon-wording bg-back-ground;
 	}
 }

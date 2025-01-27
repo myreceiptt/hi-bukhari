@@ -1,6 +1,6 @@
 // External libraries
 import React from "react";
-import Image from "next/image";
+// import Image from "next/image";
 import { ConnectEmbed, lightTheme } from "thirdweb/react";
 
 // Blockchain configurations
@@ -9,7 +9,7 @@ import { dompets } from "@/config/dompets";
 import { base } from "@/config/rantais";
 
 // Logins libraries
-import GoogleFlow from "./logins/Google";
+// import GoogleFlow from "./logins/Google";
 
 const ConnectEmbeds: React.FC = () => {
   const embedStyle: React.CSSProperties = {

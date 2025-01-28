@@ -56,7 +56,7 @@ export default function GoogleFlow() {
           height={27}
           className="object-contain"
         />
-        Google Login
+        Log in with Google
       </button>
     </>
   );

@@ -1,7 +1,5 @@
 // External libraries
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
 import { ConnectButton, useActiveAccount } from "thirdweb/react";
 
 // Blockchain configurations
@@ -15,7 +13,7 @@ import { tokeks } from "@/config/tokeks";
 // Components libraries
 import ConnectEmbeds from "./ConnectEmbeds";
 import { ErrorBoundary } from "./ErrorBoundary";
-import SignInLayout from "./SignInLayout";
+import LoginLayout from "./LoginLayout";
 
 const chains = [polygon, base, baseSepolia];
 
@@ -31,7 +29,8 @@ const DynamicLoginPage: React.FC<DynamicLoginPageProps> = ({
   if (account) {
     return (
       <div className="flex flex-col gap-4 px-0 md:px-20 m-4 items-center h-screen">
-        <div id="headers">
+        {/* Headersss */}
+        {/* <div id="headers">
           <Link href="/">
             <Image
               src="/bukhari-fa-login-04.png"
@@ -42,7 +41,7 @@ const DynamicLoginPage: React.FC<DynamicLoginPageProps> = ({
               priority
             />
           </Link>
-        </div>
+        </div> */}
         <div id="connected">
           <ConnectButton
             client={client}
@@ -73,7 +72,8 @@ const DynamicLoginPage: React.FC<DynamicLoginPageProps> = ({
         <div className="flex flex-col gap-4 content-normal px-0 md:px-20 m-4">
           <ContentComponent />
         </div>
-        <div id="footers">
+        {/* Footersss */}
+        {/* <div id="footers">
           <Link href="https://voyage.co.id/" target="_blank">
             <Image
               src="/bukhari-fa-login-06.png"
@@ -84,7 +84,7 @@ const DynamicLoginPage: React.FC<DynamicLoginPageProps> = ({
               priority
             />
           </Link>
-        </div>
+        </div> */}
       </div>
     );
   }
@@ -92,9 +92,9 @@ const DynamicLoginPage: React.FC<DynamicLoginPageProps> = ({
   return (
     <ErrorBoundary>
       <div className="p-2">
-        <SignInLayout>
+        <LoginLayout>
           <ConnectEmbeds />
-        </SignInLayout>
+        </LoginLayout>
       </div>
     </ErrorBoundary>
   );

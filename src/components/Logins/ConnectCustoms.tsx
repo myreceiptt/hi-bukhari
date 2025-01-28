@@ -1,5 +1,6 @@
 // External libraries
 import React from "react";
+// import Image from "next/image";
 import { ConnectEmbed, lightTheme } from "thirdweb/react";
 
 // Blockchain configurations
@@ -7,10 +8,14 @@ import { client } from "@/config/client";
 import { dompets } from "@/config/dompets";
 import { base } from "@/config/rantais";
 
-const ConnectEmbeds: React.FC = () => {
+// Logins libraries
+// import GoogleFlow from "./Google";
+
+const ConnectCustoms: React.FC = () => {
   const embedStyle: React.CSSProperties = {
     width: "100%",
     background: "transparent",
+    // maxWidth: "474px",
   };
 
   return (
@@ -41,10 +46,10 @@ const ConnectEmbeds: React.FC = () => {
         showThirdwebBranding={false}
         theme={lightTheme({
           colors: {
-            accentButtonBg: "#171717", // Button for Retry & Try Again
-            accentButtonText: "#707070", // Button for Retry & Try Again
-            accentText: "#171717", // Hyperlink text for Terms & Privacy
-            borderColor: "#DFDFDF", // All border color
+            // accentButtonBg: string;
+            // accentButtonText: string;
+            // accentText: string;
+            // borderColor: string;
             // connectedButtonBg: string;
             // connectedButtonBgHover: string;
             // danger: string;
@@ -61,7 +66,7 @@ const ConnectEmbeds: React.FC = () => {
             // secondaryIconColor: string;
             // secondaryIconHoverBg: string;
             // secondaryIconHoverColor: string;
-            // secondaryText: string;
+            // secondaryText: "#707070",
             selectedTextBg: "#707070",
             selectedTextColor: "#F9F9F9",
             // separatorLine: string;
@@ -78,4 +83,4 @@ const ConnectEmbeds: React.FC = () => {
   );
 };
 
-export default ConnectEmbeds;
+export default ConnectCustoms;

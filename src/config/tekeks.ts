@@ -1,5 +1,5 @@
 // Blockchain configurations
-import { polygon, base, baseSepolia } from "@/config/rantais";
+import { base, baseSepolia } from "@/config/rantais";
 
 // Define the type explicitly
 type SupportedNFTs = {
@@ -8,7 +8,6 @@ type SupportedNFTs = {
 
 // Define `tekeks` with the proper type
 export const tekeks: SupportedNFTs = {
-  [polygon.id]: ["0x0015C1dEb48c3aD0f5427cBbE81Cb36366F1621D"], // MEMORA ONE
   [base.id]: ["0x1925B991C5e2eC45BA1f34786BAd405d58202140"], // MEMORA ONE
   [baseSepolia.id]: [
     "0xc3046681149f96746b362a64472fD4B1cd1E33B2", // MEMORA ZER0

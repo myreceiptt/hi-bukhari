@@ -1,14 +1,14 @@
 "use client";
 
 // External libraries
-import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import React, { useState } from "react";
 import { useActiveAccount } from "thirdweb/react";
 
 // Components libraries
+import AccessMessage from "./AccessMessage";
 import TokenCheck from "./OwnershipCheck";
 import ClaimForm from "./RedeemForm";
-import AccessMessage from "./AccessMessage";
 import Loader from "./ReusableLoader";
 
 const CoinRedeem: React.FC = () => {

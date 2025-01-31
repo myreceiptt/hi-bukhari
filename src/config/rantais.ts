@@ -6,7 +6,6 @@ import { defineChain } from "thirdweb";
  */
 export {
   ethereum,
-  polygon,
   avalanche,
   zora,
   base,

@@ -15,14 +15,14 @@ const config: Config = {
       },
       colors: {
         "back-ground": "#F9F9F9",
-        "hitam-judul-body": "#171717",
+        "hitam-judul-body": "#171717", // "warna-icon": "#171717",
         "border-tombol": "#DFDFDF",
         "icon-wording": "#707070",
+        "back-box-icon": "#262525",
         "box-icon": "#F0F0F0",
-        "warna-icon": "#171717",
+
         "background-box-border-line": "#D3D2D2",
         "tulisan-search-price": "#666666",
-        "back-box-icon": "#262525",
         "email-address": "#7B7979",
         "menu-footer": "#E5E4E4",
         "desc-footer": "#ACABAB",

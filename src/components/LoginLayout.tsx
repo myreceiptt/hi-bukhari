@@ -1,12 +1,12 @@
 // External libraries
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 
 // Image configurations
-import art from "../../public/bukhari-fa-login-02.png";
-import banner from "../../public/bukhari-fa-login-04-crop.png";
-import powered from "../../public/bukhari-fa-login-06-crop.png";
+import art from "../../public/images/bukhari-fa-login-02.png";
+import banner from "../../public/images/bukhari-fa-login-04-crop.png";
+import powered from "../../public/images/bukhari-fa-login-06-crop.png";
 
 const LoginLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <div className="w-full lg:grid lg:grid-cols-2">

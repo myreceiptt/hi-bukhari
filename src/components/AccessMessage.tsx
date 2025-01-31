@@ -1,6 +1,6 @@
 // External libraries
-import React from "react";
 import Image from "next/image";
+import React from "react";
 
 interface AccessMessageProps {
   message: string;
@@ -15,7 +15,7 @@ const AccessMessage: React.FC<AccessMessageProps> = ({
     {/* Left Column: Image */}
     <div className="rounded-3xl overflow-hidden w-full">
       <Image
-        src="/bukhari-virtual-collectibles.gif"
+        src="/images/bukhari-virtual-collectibles.gif"
         alt="Claim Token Illustration"
         width={747}
         height={747}

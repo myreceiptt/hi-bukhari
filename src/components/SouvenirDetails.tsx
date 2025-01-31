@@ -1,9 +1,9 @@
 "use client";
 
 // External libraries
-import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
 import { getNFT, balanceOf } from "thirdweb/extensions/erc1155";
 import {
   ClaimButton,

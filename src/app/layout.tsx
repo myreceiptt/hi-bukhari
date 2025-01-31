@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThirdwebProvider } from "thirdweb/react";
+import { Analytics } from "@vercel/analytics/react";
 
 // CSS Styling
 import "./globals.css";
@@ -58,7 +59,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThirdwebProvider>{children}</ThirdwebProvider>
+        <ThirdwebProvider>
+          {children}
+          <Analytics />
+        </ThirdwebProvider>
       </body>
     </html>
   );

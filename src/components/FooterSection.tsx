@@ -80,10 +80,10 @@ const Footer: React.FC = () => {
                 <Link href="/free">Free Claim</Link>
               </li>
               <li>
-                <Link href="/paid">Pain Claim</Link>
+                <Link href="/paid">Paid Claim</Link>
               </li>
               <li>
-                <Link href="/redeem">Coins Claim</Link>
+                <Link href="/redeem">Coins Reward</Link>
               </li>
             </ul>
           </div>

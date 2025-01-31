@@ -5,32 +5,32 @@ import Image from "next/image";
 export default function FeaturedCards() {
   return (
     <main className="grid gap-4 place-items-center">
-      <div className="flex flex-col gap-2 items-center">
-        <h1 className="text-center text-sm md:text-base lg:text-lg xl:text-xl font-normal">
-          Bukhari Islamic Art Virtual Gallery
+      <div className="w-full flex flex-col gap-2 sm:items-start items-center px-0 sm:px-4">
+        <h1 className="text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal text-hitam-judul-body">
+          Bukhari Islamic:
+        </h1>
+        <h1 className="text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal text-hitam-judul-body">
+          Art Virtual Gallery
         </h1>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3">
         {[
           {
             href: "/paid",
-            src: "/bukhari-fa-login-02-3.png",
-            overlay: "/overlay-image-3.png",
+            src: "/images/bukhari-fa-paid.png",
             alt: "Affordable Exclusive Digital Souvenir",
           },
           {
             href: "/free",
-            src: "/bukhari-fa-login-02-2.png",
-            overlay: "/overlay-image-2.png",
+            src: "/images/bukhari-fa-free.png",
             alt: "Free Exclusive Digital Souvenir",
           },
           {
             href: "/redeem",
-            src: "/bukhari-fa-login-02-1.png",
-            overlay: "/overlay-image-1.png",
+            src: "/images/bukhari-fa-redeem.png",
             alt: "Redeem Priceless Coins Reward",
           },
-        ].map(({ href, src, overlay, alt }, index) => (
+        ].map(({ href, src, alt }, index) => (
           <Link href={href} key={index}>
             <button
               type="button"
@@ -38,21 +38,12 @@ export default function FeaturedCards() {
               {/* Main image */}
               <Image
                 src={src}
-                width={400}
-                height={400}
+                width={828}
+                height={916}
                 alt={alt}
                 priority
                 className="rounded-3xl"
               />
-              {/* Overlay image */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Image
-                  src={overlay}
-                  width={400}
-                  height={400}
-                  alt="Overlay Text"
-                />
-              </div>
             </button>
           </Link>
         ))}

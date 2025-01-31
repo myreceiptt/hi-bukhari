@@ -27,7 +27,7 @@ export default function Header() {
           <FaSistrix className="w-5 h-5 text-hitam-judul-body" />
           <input
             type="text"
-            placeholder="Search (dummy)"
+            placeholder="Search"
             className="ml-2 w-full bg-transparent outline-none text-xs md:text-sm text-hitam-judul-body placeholder-icon-wording"
           />
         </div>
@@ -38,9 +38,7 @@ export default function Header() {
           <button className="sm:hidden w-10 h-10 flex items-center justify-center text-xl rounded-lg bg-box-icon text-icon-wording">
             <FaSistrix />
           </button>
-          <button
-            className="w-10 h-10 flex items-center justify-center text-xl rounded-lg bg-box-icon text-icon-wording"
-            title="dummy">
+          <button className="w-10 h-10 flex items-center justify-center text-xl rounded-lg bg-box-icon text-icon-wording">
             <FaBagShopping />
           </button>
           <ConnectButtons />

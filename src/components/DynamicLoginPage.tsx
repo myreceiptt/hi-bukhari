@@ -39,11 +39,9 @@ const DynamicLoginPage: React.FC<DynamicLoginPageProps> = ({
 
   return (
     <ErrorBoundary>
-      <div className="p-2">
-        <LoginLayout>
-          <ConnectEmbeds />
-        </LoginLayout>
-      </div>
+      <LoginLayout>
+        <ConnectEmbeds />
+      </LoginLayout>
     </ErrorBoundary>
   );
 };

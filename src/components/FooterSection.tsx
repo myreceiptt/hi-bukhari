@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
           {/* Newsletter Signup */}
           <div className="w-full">
             <h3 className="text-center sm:text-left text-sm md:text-base font-semibold text-back-ground">
-              Catch our latest updates (dummy)
+              Catch our latest updates
             </h3>
             <div className="flex mt-2">
               <input
@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
           {/* Social Media Links */}
           <div className="w-full">
             <h3 className="text-center sm:text-left text-xs md:text-sm font-semibold text-back-ground">
-              Join the Community (dummy)
+              Join the Community
             </h3>
             <div className="flex gap-2 mt-2 justify-center sm:justify-start">
               <Link

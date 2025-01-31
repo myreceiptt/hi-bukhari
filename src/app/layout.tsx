@@ -59,10 +59,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThirdwebProvider>
-          {children}
-          <Analytics />
-        </ThirdwebProvider>
+        <ThirdwebProvider>{children}</ThirdwebProvider>
+        <Analytics />
       </body>
     </html>
   );

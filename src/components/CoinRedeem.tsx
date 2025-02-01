@@ -33,7 +33,6 @@ const CoinRedeem: React.FC = () => {
       <TokenCheck
         userAddress={smartAccount.address}
         onAccessChange={setHasAccess}
-        maxTokenId={5}
       />
       {hasAccess === null && <Loader message="Checking Access..." />}
       {hasAccess === false && (

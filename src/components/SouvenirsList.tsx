@@ -2,10 +2,9 @@
 
 // External libraries
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { ThirdwebContract } from "thirdweb";
-import { balanceOf, getNFT } from "thirdweb/extensions/erc1155";
+import { getNFT } from "thirdweb/extensions/erc1155";
 import {
   MediaRenderer,
   useActiveAccount,
@@ -18,23 +17,27 @@ import { bukhariVirtualCollectibles } from "@/config/contracts";
 import { FetchEthereumPrice } from "@/config/ethers";
 
 type SouvenirsListProps = {
-  title: string;
+  title1: string;
+  title2: string;
   tokenIds: string[];
 };
 
-const SouvenirsList: React.FC<SouvenirsListProps> = ({ title, tokenIds }) => {
-  const router = useRouter();
-  const backButton = () => {
-    router.back();
-  };
+const SouvenirsList: React.FC<SouvenirsListProps> = ({
+  title1,
+  title2,
+  tokenIds,
+}) => {
   const smartAccount = useActiveAccount();
 
   return (
     <main className="grid gap-4 place-items-center">
-      <div className="flex flex-col gap-2 items-center">
-        <h1 className="text-center text-sm md:text-base lg:text-lg xl:text-xl font-normal">
-          {title}
+      <div className="w-full flex flex-col gap-2 sm:items-start items-center px-0 sm:px-4">
+        <h1 className="text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-hitam-judul-body">
+          {title1}
         </h1>
+        <h2 className="text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-hitam-judul-body">
+          {title2}
+        </h2>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {tokenIds.map((tokenId) => (
@@ -45,14 +48,6 @@ const SouvenirsList: React.FC<SouvenirsListProps> = ({ title, tokenIds }) => {
             tokenId={tokenId}
           />
         ))}
-      </div>
-      <div className="grid grid-cols-1 gap-2 items-center w-full">
-        <button
-          type="button"
-          className="w-full rounded-lg p-2 border-2 border-solid border-transparent hover:border-zinc-950 text-neutral-200 hover:text-zinc-950 bg-zinc-950 hover:bg-neutral-200 transition-colors duration-300 ease-in-out text-sm leading-4 font-normal uppercase my-1"
-          onClick={backButton}>
-          &lArr; Go Back &lArr;
-        </button>
       </div>
     </main>
   );
@@ -69,12 +64,6 @@ const NFTLister: React.FC<NFTListerProps> = (props: NFTListerProps) => {
   const { data: nft, isLoading: isNftLoading } = useReadContract(getNFT, {
     contract: props.dropContract,
     tokenId: tokenIdBigInt,
-  });
-  const { data: ownedNfts } = useReadContract(balanceOf, {
-    contract: props.dropContract,
-    owner: props.receiverAddress!,
-    tokenId: tokenIdBigInt,
-    queryOptions: { enabled: !!props.receiverAddress },
   });
   const [ethPrice, setEthPrice] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
@@ -106,9 +95,9 @@ const NFTLister: React.FC<NFTListerProps> = (props: NFTListerProps) => {
   };
 
   return (
-    <div className="w-full p-2 rounded-3xl">
+    <div className="w-full grid grid-cols-1 gap-4 p-4 border border-solid border-border-tombol rounded-3xl">
       {isNftLoading ? (
-        <h2 className="text-center text-xs font-normal">
+        <h2 className="text-left text-sm font-normal">
           <code className="px-1 py-0.5 rounded font-normal">Loading...</code>
         </h2>
       ) : (
@@ -123,38 +112,35 @@ const NFTLister: React.FC<NFTListerProps> = (props: NFTListerProps) => {
             </Link>
           ) : null}
           {props.receiverAddress ? (
-            <div className="grid grid-cols-1 p-2">
-              <h2 className="text-center text-xs font-normal uppercase">
-                {nft?.metadata.name}
-              </h2>
-              {loading ? (
-                <h2 className="text-center text-xs font-normal">
-                  <code className="px-1 py-0.5 rounded font-normal">
-                    Loading...
-                  </code>
+            <>
+              <div className="grid grid-cols-1 gap-2">
+                <h2 className="text-left text-base font-semibold text-hitam-judul-body">
+                  {nft?.metadata.name}
                 </h2>
-              ) : ethPrice ? (
-                <h2 className="text-center text-xs font-normal">
-                  Price ${calculatePrice()}
-                </h2>
-              ) : (
-                <h2 className="text-center text-xs font-normal">
-                  <code className="px-1 py-0.5 rounded font-normal">
-                    Failed
-                  </code>
-                </h2>
-              )}
-              <h2 className="text-center text-xs font-normal">
-                Own {ownedNfts?.toString() || "0"} Edition on{" "}
-                {props.dropContract.chain.name}
-              </h2>
-
+                {loading ? (
+                  <h2 className="text-left text-sm font-normal">
+                    <code className="px-1 py-0.5 rounded font-normal">
+                      Loading...
+                    </code>
+                  </h2>
+                ) : ethPrice ? (
+                  <h2 className="text-left text-sm font-medium text-icon-wording">
+                    Price ${calculatePrice()}
+                  </h2>
+                ) : (
+                  <h2 className="text-left text-sm font-normal">
+                    <code className="px-1 py-0.5 rounded font-normal">
+                      Failed
+                    </code>
+                  </h2>
+                )}
+              </div>
               <Link href={`/token/${props.tokenId}`}>
-                <button className="w-full rounded-lg p-2 border-2 border-solid border-transparent hover:border-zinc-950 text-neutral-200 hover:text-zinc-950 bg-zinc-950 hover:bg-neutral-200 transition-colors duration-300 ease-in-out text-sm leading-4 font-normal uppercase my-1">
-                  VIEW DETAILS
+                <button className="w-full rounded-lg p-2 text-back-ground bg-hitam-judul-body text-base font-semibold">
+                  {Number(calculatePrice()) > 0 ? "Buy Now" : "Claim"}
                 </button>
               </Link>
-            </div>
+            </>
           ) : null}
         </>
       )}

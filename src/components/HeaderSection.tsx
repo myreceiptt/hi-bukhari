@@ -8,7 +8,7 @@ import ConnectButtons from "./ConnectButtons";
 
 export default function Header() {
   return (
-    <header className="w-full flex items-center justify-between bg-back-ground py-4 px-4 md:px-20 shadow-md">
+    <header className="w-full flex items-center justify-between bg-back-ground py-4 px-4 md:px-20">
       {/* Logo Section */}
       <div className="w-1/4 sm:w-1/6 flex justify-start">
         <Link href="/">

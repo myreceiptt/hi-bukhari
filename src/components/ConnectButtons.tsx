@@ -33,7 +33,6 @@ const ConnectButtons: React.FC = () => {
         chains={chains}
         supportedTokens={tokeks}
         supportedNFTs={tekeks}
-        // Start Modified This Part
         detailsButton={{
           displayBalanceToken: {
             [base.id]: "0x237b1188F8BAC61f2E4e0EdF2D933F827262157C",
@@ -45,7 +44,6 @@ const ConnectButtons: React.FC = () => {
             </button>
           ),
         }}
-        // End of Modified Part
         detailsModal={{
           assetTabs: ["token", "nft"],
         }}

@@ -15,11 +15,12 @@ const config: Config = {
       },
       colors: {
         "back-ground": "#F9F9F9",
-        "hitam-judul-body": "#171717", // "warna-icon": "#171717",
         "border-tombol": "#DFDFDF",
         "icon-wording": "#707070",
-        "back-box-icon": "#262525",
         "box-icon": "#F0F0F0",
+
+        "hitam-judul-body": "#171717", // "warna-icon": "#171717",
+        "back-box-icon": "#262525",
 
         "background-box-border-line": "#D3D2D2",
         "tulisan-search-price": "#666666",

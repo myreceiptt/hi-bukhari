@@ -6,10 +6,10 @@ export default function FeaturedCards() {
   return (
     <main className="grid gap-4 place-items-center">
       <div className="w-full flex flex-col gap-2 sm:items-start items-center px-0 sm:px-4">
-        <h1 className="text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-hitam-judul-body">
+        <h1 className="text-left text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-hitam-judul-body">
           Bukhari Islamic:
         </h1>
-        <h2 className="text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-hitam-judul-body">
+        <h2 className="text-left text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-hitam-judul-body">
           Art Virtual Gallery
         </h2>
       </div>

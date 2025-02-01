@@ -1,7 +1,7 @@
 "use client";
 
 // External libraries
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { getContract } from "thirdweb";
 import { useReadContract } from "thirdweb/react";
 
@@ -12,11 +12,13 @@ import { bukhariVirtualCollectibles } from "@/config/contracts";
 interface TokenCheckProps {
   userAddress: string;
   onAccessChange: (hasAccess: boolean | null) => void;
+  maxTokenId: number;
 }
 
 const TokenCheck: React.FC<TokenCheckProps> = ({
   userAddress,
   onAccessChange,
+  maxTokenId,
 }) => {
   const contract = getContract({
     client,
@@ -24,37 +26,28 @@ const TokenCheck: React.FC<TokenCheckProps> = ({
     chain: bukhariVirtualCollectibles.chain,
   });
 
-  const { data: ownedToken3 } = useReadContract({
-    contract,
-    method: "function balanceOf(address account, uint256 id) returns (uint256)",
-    params: [userAddress, 3n],
-  });
+  // Generate token IDs dynamically (0 to maxTokenId)
+  const tokenIds = Array.from({ length: maxTokenId + 1 }, (_, i) => BigInt(i));
 
-  const { data: ownedToken4 } = useReadContract({
-    contract,
-    method: "function balanceOf(address account, uint256 id) returns (uint256)",
-    params: [userAddress, 4n],
-  });
-
-  const { data: ownedToken5 } = useReadContract({
-    contract,
-    method: "function balanceOf(address account, uint256 id) returns (uint256)",
-    params: [userAddress, 5n],
-  });
+  // Fetch balances dynamically for all token IDs
+  const tokenBalances = tokenIds.map((id) =>
+    useReadContract({
+      contract,
+      method:
+        "function balanceOf(address account, uint256 id) returns (uint256)",
+      params: [userAddress, id],
+    })
+  );
 
   useEffect(() => {
-    if (
-      ownedToken3 !== undefined ||
-      ownedToken4 !== undefined ||
-      ownedToken5 !== undefined
-    ) {
-      const hasTokens =
-        (ownedToken3 && ownedToken3 > 0n) ||
-        (ownedToken4 && ownedToken4 > 0n) ||
-        (ownedToken5 && ownedToken5 > 0n);
-      onAccessChange(!!hasTokens);
+    if (tokenBalances) {
+      // Extract balance data safely
+      const hasTokens = tokenBalances.some(
+        (balance) => balance?.data && BigInt(balance.data) > 0n
+      );
+      onAccessChange(hasTokens);
     }
-  }, [ownedToken3, ownedToken4, ownedToken5, onAccessChange]);
+  }, [tokenBalances, onAccessChange]);
 
   return null; // This component doesn't render anything itself
 };

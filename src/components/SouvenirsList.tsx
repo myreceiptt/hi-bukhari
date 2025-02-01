@@ -97,8 +97,10 @@ const NFTLister: React.FC<NFTListerProps> = (props: NFTListerProps) => {
   return (
     <div className="w-full grid grid-cols-1 gap-4 p-4 border border-solid border-border-tombol rounded-3xl">
       {isNftLoading ? (
-        <h2 className="text-left text-sm font-normal">
-          <code className="px-1 py-0.5 rounded font-normal">Loading...</code>
+        <h2 className="text-left text-sm font-normal text-hitam-judul-body">
+          <code className="px-1 py-0.5 rounded font-normal text-hitam-judul-body">
+            Loading...
+          </code>
         </h2>
       ) : (
         <>
@@ -110,7 +112,13 @@ const NFTLister: React.FC<NFTListerProps> = (props: NFTListerProps) => {
                 className="rounded-3xl w-full"
               />
             </Link>
-          ) : null}
+          ) : (
+            <h2 className="text-left text-sm font-normal text-hitam-judul-body">
+              <code className="px-1 py-0.5 rounded font-normal text-hitam-judul-body">
+                No data available
+              </code>
+            </h2>
+          )}
           {props.receiverAddress ? (
             <>
               <div className="grid grid-cols-1 gap-2">
@@ -118,8 +126,8 @@ const NFTLister: React.FC<NFTListerProps> = (props: NFTListerProps) => {
                   {nft?.metadata.name}
                 </h2>
                 {loading ? (
-                  <h2 className="text-left text-sm font-normal">
-                    <code className="px-1 py-0.5 rounded font-normal">
+                  <h2 className="text-left text-sm font-normal text-hitam-judul-body">
+                    <code className="px-1 py-0.5 rounded font-normal text-hitam-judul-body">
                       Loading...
                     </code>
                   </h2>
@@ -128,8 +136,8 @@ const NFTLister: React.FC<NFTListerProps> = (props: NFTListerProps) => {
                     Price ${calculatePrice()}
                   </h2>
                 ) : (
-                  <h2 className="text-left text-sm font-normal">
-                    <code className="px-1 py-0.5 rounded font-normal">
+                  <h2 className="text-left text-sm font-normal text-hitam-judul-body">
+                    <code className="px-1 py-0.5 rounded font-normal text-hitam-judul-body">
                       Failed
                     </code>
                   </h2>
@@ -137,7 +145,7 @@ const NFTLister: React.FC<NFTListerProps> = (props: NFTListerProps) => {
               </div>
               <Link href={`/token/${props.tokenId}`}>
                 <button className="w-full rounded-lg p-2 text-back-ground bg-hitam-judul-body text-base font-semibold">
-                  {Number(calculatePrice()) > 0 ? "Buy Now" : "Claim"}
+                  {Number(calculatePrice()) > 0 ? "Buy Now" : "Collect Now"}
                 </button>
               </Link>
             </>

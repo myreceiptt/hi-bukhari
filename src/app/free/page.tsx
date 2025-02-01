@@ -3,9 +3,9 @@
 // External libraries
 import React from "react";
 
-// Components
-import DynamicLoginPage from "@/components/DynamicLoginPage";
-import SouvenirsList from "@/components/SouvenirsList";
+// Components libraries
+import SouvenirsList from "@/components/contents/SouvenirsList";
+import DynamicLoginPage from "@/components/logins/DynamicLoginPage";
 
 const pageTitle1 = "Freemium";
 const pageTitle2 = "Virtual Collectibles";

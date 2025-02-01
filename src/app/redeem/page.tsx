@@ -3,12 +3,12 @@
 // External libraries
 import React from "react";
 
-// Components
-import DynamicLoginPage from "@/components/DynamicLoginPage";
-import CoinDetails from "@/components/CoinRedeem";
+// Components libraries
+import CoinRedeem from "@/components/contents/CoinRedeem";
+import DynamicLoginPage from "@/components/logins/DynamicLoginPage";
 
 const PageRedeem: React.FC = () => (
-  <DynamicLoginPage ContentComponent={() => <CoinDetails />} />
+  <DynamicLoginPage ContentComponent={() => <CoinRedeem />} />
 );
 
 export default PageRedeem;

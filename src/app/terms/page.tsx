@@ -5,14 +5,14 @@ import Link from "next/link";
 
 // Blockchain configurations
 import {
-  entityMonth,
-  entityDate,
-  entityYear,
-  entityName,
+  entityAddress,
   entityAlias1,
   entityAlias2,
-  entityAddress,
+  entityDate,
   entityEmail,
+  entityMonth,
+  entityName,
+  entityYear,
 } from "@/config/osloid";
 
 export default function Terms() {

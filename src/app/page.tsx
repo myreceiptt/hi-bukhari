@@ -4,8 +4,8 @@
 import React from "react";
 
 // Components libraries
-import DynamicLoginPage from "@/components/DynamicLoginPage";
-import FeaturedCards from "@/components/FeaturedCards";
+import FeaturedCards from "@/components/contents/FeaturedCards";
+import DynamicLoginPage from "@/components/logins/DynamicLoginPage";
 
 const PageHome: React.FC = () => (
   <DynamicLoginPage ContentComponent={FeaturedCards} />

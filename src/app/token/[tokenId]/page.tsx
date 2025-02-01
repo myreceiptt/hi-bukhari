@@ -3,9 +3,9 @@
 // External libraries
 import React from "react";
 
-// Components
-import DynamicLoginPage from "@/components/DynamicLoginPage";
-import SouvenirDetails from "@/components/SouvenirDetails";
+// Components libraries
+import SouvenirDetails from "@/components/contents/SouvenirDetails";
+import DynamicLoginPage from "@/components/logins/DynamicLoginPage";
 
 const PageToken: React.FC = () => (
   <DynamicLoginPage ContentComponent={() => <SouvenirDetails />} />

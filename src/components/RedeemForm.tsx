@@ -3,8 +3,8 @@
 // External libraries
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { FaSackDollar } from "react-icons/fa6";
 import { ClaimButton } from "thirdweb/react";
 
 // Blockchain configurations
@@ -13,11 +13,7 @@ import { client } from "@/config/client";
 import { b0nV0yageDrop } from "@/config/contracts";
 
 const ClaimForm: React.FC = () => {
-  const router = useRouter();
-  const backButton = () => {
-    router.back();
-  };
-
+  const [pesanTunggu, setPesanTunggu] = useState<string | null>(null);
   const [pesanSukses, setPesanSukses] = useState<string | null>(null);
   const [pesanGagal, setPesanGagal] = useState<string | null>(null);
 
@@ -37,8 +33,10 @@ const ClaimForm: React.FC = () => {
     }
   };
 
+  const [isProcessing, setIsProcessing] = useState(false);
+
   return (
-    <div className="w-auto grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+    <div className="w-auto grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 lg:gap-12 items-start">
       {/* Left Column: Image */}
       <div className="rounded-3xl overflow-hidden w-full">
         <Image
@@ -46,94 +44,120 @@ const ClaimForm: React.FC = () => {
           alt="BON VOYAGE Token Illustration"
           width={747}
           height={747}
-          className="rounded-3xl w-full object-cover bg-zinc-950"
+          className="rounded-3xl w-full"
         />
       </div>
 
       {/* Right Column: Form */}
-      <div className="flex flex-col gap-2 lg:gap-4 items-center lg:items-start justify-center h-full">
-        <h1 className="text-center lg:text-left text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold">
+      <div className="flex flex-col gap-2 lg:gap-4 items-start justify-center h-full">
+        <h1 className="text-left text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-hitam-judul-body">
           Claim Your $BON Dosh
         </h1>
-        <h1 className="text-center lg:text-left text-xs font-normal">
-          by &#9673;{" "}
-          <Link href="https://voyage.co.id/" target="_blank">
-            VOYAGE.CO.ID
-          </Link>
-        </h1>
-        <h2 className="text-center lg:text-left text-xs font-normal">
+        <div className="flex flex-row gap-2">
+          <h1 className="text-left text-sm font-medium text-icon-wording">
+            by
+          </h1>
+          <span className="text-3xl leading-6 text-icon-wording">&#9673;</span>
+          <h1 className="text-left text-sm font-medium text-icon-wording">
+            <Link href="https://voyage.co.id/" target="_blank">
+              VOYAGE.CO.ID
+            </Link>
+          </h1>
+        </div>
+        <h2 className="text-left text-sm font-medium text-icon-wording">
           Redeem your coins rewards by claiming the $BON Dosh, the ERC20 tokens
           on the {b0nV0yageDrop.chain.name} blockchain using your Smart Account
           wallet.
         </h2>
 
         {/* Success or Error Messages */}
+        {pesanTunggu && (
+          <h4 className="text-left text-sm font-normal text-hitam-judul-body">
+            <code className="px-1 py-0.5 rounded font-normal text-hitam-judul-body">
+              {pesanTunggu}
+            </code>
+          </h4>
+        )}
         {pesanSukses && (
-          <h4 className="text-center text-xs font-normal">
-            <code className="px-1 py-0.5 rounded font-semibold text-blue-500">
+          <h4 className="text-left text-sm font-normal text-hitam-judul-body">
+            <code className="px-1 py-0.5 rounded font-normal text-hitam-judul-body">
               {pesanSukses}
             </code>
           </h4>
         )}
         {pesanGagal && (
-          <h4 className="text-center text-xs font-normal">
-            <code className="px-1 py-0.5 rounded font-semibold text-red-500">
+          <h4 className="text-left text-sm font-normal text-hitam-judul-body">
+            <code className="px-1 py-0.5 rounded font-normal text-hitam-judul-body">
               {pesanGagal}
             </code>
           </h4>
         )}
 
         {/* Amount Input */}
-        <div className="flex flex-col gap-2">
-          <label htmlFor="amount" className="text-center text-xs font-normal">
-            Amount to Claim (1-11)
+        <div className="w-full grid grid-cols-2">
+          <label
+            htmlFor="amount"
+            className="w-full text-left text-base md:text-lg lg:text-xl xl:text-2xl font-semibold text-hitam-judul-body place-content-center">
+            Amount (1-11)
           </label>
-          <input
-            id="amount"
-            type="number"
-            value={amount}
-            onChange={handleAmountChange}
-            min="1"
-            max="11"
-            className="w-full p-3 text-center text-sm border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-zinc-500"
-          />
+          <div className="w-full flex bg-box-icon items-center justify-center px-4 py-2 rounded-lg">
+            <FaSackDollar className="w-5 h-5 text-hitam-judul-body" />
+            <input
+              id="amount"
+              type="number"
+              value={amount}
+              onChange={handleAmountChange}
+              min="1"
+              max="11"
+              className="ml-2 w-full bg-transparent outline-none text-xs md:text-sm text-hitam-judul-body placeholder-icon-wording"
+            />
+          </div>
         </div>
 
         {/* Claim Button */}
         <ClaimButton
           unstyled
-          className="w-full rounded-lg p-2 border-2 border-solid border-zinc-950 text-zinc-950 bg-neutral-200 text-sm leading-4 font-normal uppercase my-1"
-          contractAddress={b0nV0yageDrop.address} // contract address of the Token Drop
+          className={`w-full rounded-lg p-2 text-base font-semibold transition-colors duration-300 ease-in-out
+            ${
+              isProcessing
+                ? "border-2 border-solid border-border-tombol bg-back-ground text-hitam-judul-body"
+                : "border-2 border-solid border-back-ground text-back-ground bg-hitam-judul-body"
+            }
+          `}
+          contractAddress={b0nV0yageDrop.address}
           chain={b0nV0yageDrop.chain}
           client={client}
           claimParams={{
             type: "ERC20",
             quantity: amount,
           }}
+          disabled={isProcessing}
+          onClick={() => {
+            setIsProcessing(true);
+            setPesanTunggu("Bismillahirrahmanirrahim! Processing...");
+            setPesanSukses(null);
+            setPesanGagal(null);
+          }}
+          onTransactionSent={() => {
+            setIsProcessing(true);
+            setPesanTunggu("Bismillahirrahmanirrahim! Processing...");
+            setPesanSukses(null);
+            setPesanGagal(null);
+          }}
           onError={(error) => {
             setPesanGagal(`${error.message}`);
             setPesanSukses(null);
+            setIsProcessing(false);
+            setPesanTunggu(null);
           }}
           onTransactionConfirmed={async () => {
-            setPesanSukses("Claim successful!");
+            setPesanSukses("Alhamdulillah! Successful!");
             setPesanGagal(null);
-          }}
-          payModal={{
-            metadata: {
-              name: "Van Gogh Starry Night",
-              image: "https://unsplash.com/starry-night.png",
-            },
+            setIsProcessing(false);
+            setPesanTunggu(null);
           }}>
-          CLAIM IT!
+          Claim Now
         </ClaimButton>
-
-        {/* Back Button */}
-        <button
-          type="button"
-          className="w-full rounded-lg p-2 border-2 border-solid border-transparent hover:border-zinc-950 text-neutral-200 hover:text-zinc-950 bg-zinc-950 hover:bg-neutral-200 transition-colors duration-300 ease-in-out text-sm leading-4 font-normal uppercase my-1"
-          onClick={backButton}>
-          &lArr; Go Back &lArr;
-        </button>
       </div>
     </div>
   );

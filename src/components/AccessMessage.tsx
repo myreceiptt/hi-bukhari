@@ -11,35 +11,40 @@ const AccessMessage: React.FC<AccessMessageProps> = ({
   message,
   onRedirect,
 }) => (
-  <div className="w-auto grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
-    {/* Left Column: Image */}
-    <div className="rounded-3xl overflow-hidden w-full">
-      <Image
-        src="/images/bukhari-virtual-collectibles.gif"
-        alt="Claim Token Illustration"
-        width={747}
-        height={747}
-        className="rounded-3xl w-full object-cover bg-zinc-950"
-      />
-    </div>
-
-    {/* Right Column: Form */}
-    <div className="flex flex-col gap-2 lg:gap-4 items-center lg:items-start justify-center h-full">
-      <h2 className="text-center lg:text-left text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold">
+  <>
+    {/* Top Section - Content Box */}
+    <div className="w-full flex flex-col gap-2 items-center justify-center text-center px-0 sm:px-4">
+      <h2 className="text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal text-hitam-judul-body">
         {message}
       </h2>
-      <h2 className="text-center lg:text-left text-xs font-normal">
-        Please get your access by collect any Harmoni X Bukhari Virtual
+      <h3 className="text-center text-sm font-medium text-icon-wording">
+        Please get your access by collecting any Harmoni X Bukhari Virtual
         Collectibles at least one edition.
-      </h2>
+      </h3>
+    </div>
+    <div className="grid grid-cols-1 mt-2 md:mt-4 mb-4 md:mb-8 lg:mb-12">
+      {/* Collect Button */}
       <button
         type="button"
-        className="w-full rounded-lg p-2 border-2 border-solid border-transparent hover:border-zinc-950 text-neutral-200 hover:text-zinc-950 bg-zinc-950 hover:bg-neutral-200 transition-colors duration-300 ease-in-out text-sm leading-4 font-normal uppercase my-1"
+        className="rounded-lg py-4 px-12 text-back-ground bg-hitam-judul-body text-base font-semibold"
         onClick={onRedirect}>
-        &lArr; Go to Free NFTs &lArr;
+        Collect Virtual Collectibles!
       </button>
     </div>
-  </div>
+
+    {/* Bottom Section - Background Image */}
+    <div className="bottom-0 left-0 w-full h-full">
+      <Image
+        src="/images/bukhari-fa-login-02-12.png"
+        alt="Background Image"
+        width={1430}
+        height={541}
+        objectFit="cover"
+        objectPosition="top"
+        priority
+      />
+    </div>
+  </>
 );
 
 export default AccessMessage;

@@ -15,27 +15,28 @@ import {
 const Footer: React.FC = () => {
   return (
     <footer className="w-full bg-hitam-judul-body py-4 px-4 md:px-20">
-      <div className="grid grid-cols-1 sm:grid-cols-2 justify-items-center gap-4 md:gap-10">
-        <div className="w-full grid grid-cols-1 justify-items-center gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-4">
+        <div className="w-full flex flex-col justify-items-center gap-4">
           {/* Newsletter Signup */}
-          <div className="w-full">
+          <div className="w-full flex flex-col justify-center sm:justify-start items-center sm:items-start">
             <h3 className="text-center sm:text-left text-sm md:text-base font-semibold text-back-ground">
               Catch our latest updates
             </h3>
-            <div className="flex mt-2">
+            <div className="w-full flex flex-row justify-center sm:justify-start mt-2">
               <input
                 type="email"
                 placeholder="enter your email address"
-                className="text-xs md:text-sm w-full px-2 py-2 border border-border-tombol rounded-l-lg bg-transparent focus:outline-none placeholder-icon-wording text-border-tombol"
+                className="text-xs md:text-sm w-2/3 lg:w-3/5 px-2 py-0 border border-border-tombol rounded-l-lg bg-transparent focus:outline-none placeholder-icon-wording text-border-tombol"
               />
               <button className="text-xs md:text-sm px-6 py-2 bg-back-ground font-semibold rounded-r-lg text-hitam-judul-body">
                 Subscribe
               </button>
             </div>
           </div>
-
+        </div>
+        <div className="w-full flex flex-col sm:flex-row justify-between gap-4">
           {/* Social Media Links */}
-          <div className="w-full">
+          <div className="w-full sm:w-2/3">
             <h3 className="text-center sm:text-left text-xs md:text-sm font-semibold text-back-ground">
               Join the Community
             </h3>
@@ -67,11 +68,9 @@ const Footer: React.FC = () => {
               </Link>
             </div>
           </div>
-        </div>
 
-        {/* Navigation Links */}
-        <div className="grid grid-cols-2 justify-between gap-4">
-          <div className="w-full">
+          {/* Navigation Links */}
+          <div className="w-full sm:w-1/3">
             <h3 className="text-center sm:text-left text-xs md:text-sm font-semibold text-icon-wording">
               Claim Pages
             </h3>
@@ -84,23 +83,6 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link href="/redeem">Coins Reward</Link>
-              </li>
-            </ul>
-          </div>
-          <div className="w-full">
-            <h3 className="text-center sm:text-left text-xs md:text-sm font-semibold text-icon-wording">
-              Terms & Policy
-            </h3>
-            <ul className="text-center sm:text-left text-xs sm:text-sm md:text-base text-back-ground mt-2">
-              <li>
-                <Link href="/terms" target="_blank">
-                  Terms of Use
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy" target="_blank">
-                  Privacy Policy
-                </Link>
               </li>
             </ul>
           </div>

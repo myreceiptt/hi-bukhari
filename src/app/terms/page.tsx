@@ -19,14 +19,16 @@ export default function Terms() {
   return (
     <div className="flex flex-col items-center gap-8 px-4 md:px-20 py-8">
       {/* Top Image */}
-      <Image
-        src="/bukhari-fa-login-04.png"
-        alt="Bukhari Islamic Art Banner with Partners Logo."
-        width={474}
-        height={474}
-        className="object-contain w-full max-w-max"
-        priority
-      />
+      <header className="">
+        <Image
+          src="/images/bukhari-fa-login-04-crop.png"
+          alt="Bukhari Islamic Art Banner with Partners Logo."
+          width={1080}
+          height={149}
+          className="object-contain w-full max-w-max"
+          priority
+        />
+      </header>
 
       {/* Content Section */}
       <main className="w-full max-w-3xl space-y-8">
@@ -674,14 +676,16 @@ export default function Terms() {
       </main>
 
       {/* Bottom Image */}
-      <Image
-        src="/bukhari-fa-login-06.png"
-        alt="Bukhari Islamic Art Powered by VOYAGE."
-        width={474}
-        height={474}
-        className="object-contain w-full max-w-max"
-        priority
-      />
+      <footer className="bg-hitam-judul-body">
+        <Image
+          src="/images/bukhari-fa-logo-footer.png"
+          alt="Bukhari Islamic Art Powered by VOYAGE."
+          width={474}
+          height={474}
+          className="object-contain w-full max-w-max"
+          priority
+        />
+      </footer>
     </div>
   );
 }

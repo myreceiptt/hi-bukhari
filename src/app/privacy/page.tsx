@@ -19,10 +19,10 @@ export default function Privacy() {
     <div className="flex flex-col items-center gap-8 px-4 md:px-20 py-8">
       {/* Top Image */}
       <Image
-        src="/bukhari-fa-login-04.png"
+        src="/images/bukhari-fa-login-04-crop.png"
         alt="Bukhari Islamic Art Banner with Partners Logo."
-        width={474}
-        height={474}
+        width={1080}
+        height={149}
         className="object-contain w-full max-w-max"
         priority
       />

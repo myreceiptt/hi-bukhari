@@ -4,7 +4,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import { FaSackDollar } from "react-icons/fa6";
+import { FaSackDollar, FaXmark } from "react-icons/fa6";
 import { ClaimButton } from "thirdweb/react";
 
 // Blockchain configurations
@@ -13,6 +13,8 @@ import { client } from "@/config/client";
 import { b0nV0yageDrop } from "@/config/contracts";
 
 const ClaimForm: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const [pesanTunggu, setPesanTunggu] = useState<string | null>(null);
   const [pesanSukses, setPesanSukses] = useState<string | null>(null);
   const [pesanGagal, setPesanGagal] = useState<string | null>(null);
@@ -38,15 +40,154 @@ const ClaimForm: React.FC = () => {
   return (
     <div className="w-auto grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 lg:gap-12 items-start">
       {/* Left Column: Image */}
-      <div className="rounded-3xl overflow-hidden w-full">
-        <Image
-          src="/images/bon-voyage.gif"
-          alt="BON VOYAGE Token Illustration"
-          width={747}
-          height={747}
-          className="rounded-3xl w-full"
-          unoptimized
-        />
+      <div className="relative">
+        {/* Clickable Image */}
+        <div
+          className="rounded-3xl overflow-hidden w-full cursor-pointer"
+          onClick={() => setIsOpen(true)}>
+          <Image
+            src="/images/bon-voyage.gif"
+            alt="BON VOYAGE Token Illustration"
+            width={747}
+            height={747}
+            className="rounded-3xl w-full"
+            unoptimized
+          />
+        </div>
+
+        {/* Pop-up Modal */}
+        {isOpen && (
+          <div className="fixed inset-0 flex items-center justify-center bg-hitam-judul-body/45 backdrop-blur-sm z-50">
+            {/* Pop-up Box */}
+            <div className="bg-back-ground rounded-2xl shadow-lg relative w-[89vw] h-[89vh] sm:w-[74vw] sm:h-[74vh] lg:w-[47vw] lg:h-[47vh] flex flex-col">
+              {/* Close Button */}
+              <button
+                className="absolute top-3 right-3 w-10 h-10 flex items-center justify-center text-xl rounded-lg bg-box-icon text-icon-wording"
+                onClick={() => setIsOpen(false)}>
+                <FaXmark />
+              </button>
+
+              {/* Scrollable Content */}
+              <div className="p-6 overflow-y-auto flex-1">
+                <h2 className="text-xl font-bold text-left text-hitam-judul-body mb-2">
+                  $BON Dosh!!!!
+                </h2>
+                <p className="text-icon-wording text-sm leading-relaxed">
+                  At a certain point in time… in{" "}
+                  <span className="text-icon-wording text-sm font-semibold leading-relaxed">
+                    the Realm of Reality
+                  </span>
+                  .
+                  <br />
+                  <br />
+                  On{" "}
+                  <span className="text-icon-wording text-sm font-semibold leading-relaxed">
+                    EARTH #474
+                  </span>
+                  , after traversing 4.5 billion years in the vastness of the
+                  cosmos, a group of individuals embarked on an extraordinary
+                  journey. They did not merely traverse land, but also crossed
+                  the oceans and even ventured into the boundless expanse of
+                  space. Thus, the{" "}
+                  <span className="text-icon-wording text-sm font-semibold leading-relaxed">
+                    VOYAGE
+                  </span>{" "}
+                  began—not merely a physical expedition, but a pursuit of
+                  values, encounters, and growth.
+                  <br />
+                  <br />
+                  As time unfolded, their efforts met challenges and
+                  opportunities alike. Revenue flowed in and out, weaving a
+                  pattern akin to the ceaseless tides of the sea. Every meeting
+                  with a new soul, every crossroads encountered, every farewell,
+                  and every joyous reunion—each left an indelible mark upon the
+                  tapestry of this great journey.
+                  <br />
+                  <br />
+                  The call{" "}
+                  <span className="text-icon-wording text-sm font-semibold leading-relaxed">
+                    "BON VOYAGE!"
+                  </span>{" "}
+                  grew louder, reverberating not only in the minds of those
+                  undertaking the{" "}
+                  <span className="text-icon-wording text-sm font-semibold leading-relaxed">
+                    VOYAGE
+                  </span>{" "}
+                  but also weaving itself into the very fabric of decentralised
+                  data traffic. What was once a mere expression of well-wishes,
+                  <span className="text-icon-wording text-sm font-semibold leading-relaxed">
+                    BON
+                  </span>{" "}
+                  had now evolved into something far greater—a unit of measure
+                  for the{" "}
+                  <span className="text-icon-wording text-sm font-semibold leading-relaxed">
+                    VOYAGE
+                  </span>{" "}
+                  itself.
+                  <br />
+                  <br />
+                </p>
+                <ul className="text-icon-wording text-sm leading-relaxed">
+                  <li>
+                    🔹 How far has the{" "}
+                    <span className="text-icon-wording text-sm font-semibold leading-relaxed">
+                      VOYAGE
+                    </span>{" "}
+                    taken them?
+                  </li>
+                  <li>🔹 How much value has been forged along the way?</li>
+                  <li>🔹 How many encounters have shaped the path?</li>
+                  <li>
+                    🔹 How much revenue has been channelled and exchanged?
+                  </li>
+                </ul>
+                <p className="text-icon-wording text-sm leading-relaxed">
+                  <br />
+                  <span className="text-icon-wording text-sm font-semibold leading-relaxed">
+                    BON
+                  </span>{" "}
+                  stands as a measure that immortalises experience, a token of
+                  equivalence{" "}
+                  <span className="text-icon-wording text-sm font-semibold leading-relaxed">
+                    (ERC-20)
+                  </span>{" "}
+                  that encapsulates the influence of every participant in the{" "}
+                  <span className="text-icon-wording text-sm font-semibold leading-relaxed">
+                    VOYAGE
+                  </span>
+                  .<br />
+                  <br />
+                  <span className="text-icon-wording text-sm font-semibold leading-relaxed">
+                    BON
+                  </span>{" "}
+                  is not just a figure—it is proof of the steps taken, the
+                  values cultivated, and the impact left behind.
+                  <br />
+                  <br />
+                  And at the culmination of every journey—whether at its
+                  inception or after traversing great distances—one call
+                  continues to resonate, carrying forth the spirit of adventure
+                  and purpose:
+                  <br />
+                  <br />
+                  <span className="text-icon-wording text-sm font-semibold leading-relaxed">
+                    BON VOYAGE! 🚀
+                  </span>
+                  <br />
+                  <br />
+                  <Image
+                    src="/images/bon-voyage.gif"
+                    alt="BON VOYAGE Token Illustration"
+                    width={747}
+                    height={747}
+                    className="rounded-3xl w-full"
+                    unoptimized
+                  />
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Right Column: Form */}

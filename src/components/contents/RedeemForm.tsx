@@ -175,6 +175,11 @@ const ClaimForm: React.FC = () => {
                   </span>
                   <br />
                   <br />
+                  <span className="text-icon-wording text-xs font-semibold leading-relaxed">
+                    Prof. NOTA v.11.0 🍌☕🍌☕
+                  </span>
+                  <br />
+                  <br />
                   <Image
                     src="/images/bon-voyage.gif"
                     alt="BON VOYAGE Token Illustration"

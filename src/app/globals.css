@@ -20,3 +20,10 @@
 		@apply text-icon-wording bg-back-ground;
 	}
 }
+
+/* ✅ Manually Define Class to Ensure Tailwind Detects It */
+@layer utilities {
+	.text-icon-wording {
+		color: theme("colors.icon-wording");
+	}
+}

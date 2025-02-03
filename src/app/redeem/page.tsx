@@ -5,7 +5,7 @@ import React from "react";
 
 // Components libraries
 import CoinRedeem from "@/components/contents/CoinRedeem";
-import DynamicLoginPage from "@/components/logins/DynamicLoginPage";
+import DynamicLoginPage from "@/components/logins/DynamicLogin";
 
 const PageRedeem: React.FC = () => (
   <DynamicLoginPage ContentComponent={() => <CoinRedeem />} />

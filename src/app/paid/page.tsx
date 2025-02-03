@@ -5,7 +5,7 @@ import React from "react";
 
 // Components libraries
 import SouvenirsList from "@/components/contents/SouvenirsList";
-import DynamicLoginPage from "@/components/logins/DynamicLoginPage";
+import DynamicLoginPage from "@/components/logins/DynamicLogin";
 
 const pageTitle1 = "Exclusive";
 const pageTitle2 = "Virtual Collectibles";

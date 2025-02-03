@@ -2,17 +2,12 @@
 import React from "react";
 import { useActiveAccount } from "thirdweb/react";
 
-// Blockchain configurations
-import { base, baseSepolia } from "@/config/rantais";
-
 // Components libraries
 import ConnectEmbeds from "./ConnectEmbeds";
 import { ErrorBoundary } from "./ErrorBoundary";
 import Footer from "./FooterSection";
 import Header from "./HeaderSection";
 import LoginLayout from "./LoginLayout";
-
-const chains = [base, baseSepolia];
 
 interface DynamicLoginPageProps {
   ContentComponent: React.FC;

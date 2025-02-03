@@ -16,4 +16,4 @@ export const tekeks: SupportedNFTs = {
 };
 
 // Assign `tekeks` to `supportedNFTs`
-const supportedNFTs: SupportedNFTs = tekeks;
+// const supportedNFTs: SupportedNFTs = tekeks;

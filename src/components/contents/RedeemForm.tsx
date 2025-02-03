@@ -45,6 +45,7 @@ const ClaimForm: React.FC = () => {
           width={747}
           height={747}
           className="rounded-3xl w-full"
+          unoptimized
         />
       </div>
 
@@ -134,13 +135,13 @@ const ClaimForm: React.FC = () => {
           disabled={isProcessing}
           onClick={() => {
             setIsProcessing(true);
-            setPesanTunggu("Bismillahirrahmanirrahim! Processing...");
+            setPesanTunggu("Bismillah! Processing...");
             setPesanSukses(null);
             setPesanGagal(null);
           }}
           onTransactionSent={() => {
             setIsProcessing(true);
-            setPesanTunggu("Bismillahirrahmanirrahim! Processing...");
+            setPesanTunggu("Bismillah! Processing...");
             setPesanSukses(null);
             setPesanGagal(null);
           }}

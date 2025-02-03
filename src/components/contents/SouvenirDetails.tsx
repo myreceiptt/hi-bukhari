@@ -28,8 +28,8 @@ const SouvenirDetails: React.FC = () => {
   const [pesanSukses, setPesanSukses] = React.useState<string | null>(null);
   const [pesanGagal, setPesanGagal] = React.useState<string | null>(null);
 
-  const tokenIdString = Array.isArray(tokenId) ? tokenId[0] : tokenId;
-  const tokenIdBigInt = BigInt(tokenIdString || 0);
+  const tokenIdString = Array.isArray(tokenId) ? tokenId[0] : tokenId ?? "0";
+  const tokenIdBigInt = BigInt(tokenIdString);
   const { data: nft, isLoading: isNftLoading } = useReadContract(getNFT, {
     contract: bukhariVirtualCollectibles,
     tokenId: tokenIdBigInt,
@@ -37,7 +37,7 @@ const SouvenirDetails: React.FC = () => {
 
   const { data: ownedNfts } = useReadContract(balanceOf, {
     contract: bukhariVirtualCollectibles,
-    owner: smartAccount?.address!,
+    owner: smartAccount?.address ?? "",
     tokenId: tokenIdBigInt,
     queryOptions: { enabled: !!smartAccount?.address && !!tokenId },
   });
@@ -208,13 +208,13 @@ const SouvenirDetails: React.FC = () => {
             disabled={isProcessing}
             onClick={() => {
               setIsProcessing(true);
-              setPesanTunggu("Bismillahirrahmanirrahim! Processing...");
+              setPesanTunggu("Bismillah! Processing...");
               setPesanSukses(null);
               setPesanGagal(null);
             }}
             onTransactionSent={() => {
               setIsProcessing(true);
-              setPesanTunggu("Bismillahirrahmanirrahim! Processing...");
+              setPesanTunggu("Bismillah! Processing...");
               setPesanSukses(null);
               setPesanGagal(null);
             }}

@@ -106,7 +106,7 @@ const ClaimForm: React.FC = () => {
                   <br />
                   The call{" "}
                   <span className="text-icon-wording text-sm font-semibold leading-relaxed">
-                    "BON VOYAGE!"
+                    &quot;BON VOYAGE!&quot;
                   </span>{" "}
                   grew louder, reverberating not only in the minds of those
                   undertaking the{" "}

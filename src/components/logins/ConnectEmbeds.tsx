@@ -5,7 +5,7 @@ import { ConnectEmbed, lightTheme } from "thirdweb/react";
 // Blockchain configurations
 import { client } from "@/config/client";
 import { dompets } from "@/config/dompets";
-import { base } from "@/config/rantais";
+import { baseSepolia } from "@/config/rantais";
 
 const ConnectEmbeds: React.FC = () => {
   const embedStyle: React.CSSProperties = {
@@ -33,7 +33,7 @@ const ConnectEmbeds: React.FC = () => {
         wallets={dompets}
         accountAbstraction={{
           factoryAddress: "0x82EC684C86b84AC60b5e162EC87d6DCF4213D468",
-          chain: base,
+          chain: baseSepolia,
           sponsorGas: true,
         }}
         privacyPolicyUrl="/privacy"

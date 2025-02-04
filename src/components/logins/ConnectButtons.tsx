@@ -6,11 +6,18 @@ import { ConnectButton } from "thirdweb/react";
 // Blockchain configurations
 import { client } from "@/config/client";
 import { dompets } from "@/config/dompets";
-import { base, baseSepolia } from "@/config/rantais";
+import {
+  avalanche,
+  base,
+  baseSepolia,
+  ethereum,
+  optimism,
+  zora,
+} from "@/config/rantais";
 import { tekeks } from "@/config/tekeks";
 import { tokeks } from "@/config/tokeks";
 
-const chains = [base, baseSepolia];
+const chains = [avalanche, base, baseSepolia, ethereum, optimism, zora];
 
 const ConnectButtons: React.FC = () => {
   return (
@@ -27,7 +34,7 @@ const ConnectButtons: React.FC = () => {
         wallets={dompets}
         accountAbstraction={{
           factoryAddress: "0x82EC684C86b84AC60b5e162EC87d6DCF4213D468",
-          chain: base,
+          chain: baseSepolia,
           sponsorGas: true,
         }}
         chains={chains}

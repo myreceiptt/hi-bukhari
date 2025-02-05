@@ -14,8 +14,8 @@ const LoginLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
       <Image
         src={art}
         alt="Bukhari Islamic Art Background for Login Page."
-        width={474}
-        height={474}
+        width={1080}
+        height={1103}
         className="absolute inset-0 w-full h-full object-cover object-right"
         priority
       />

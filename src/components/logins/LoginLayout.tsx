@@ -26,8 +26,8 @@ const LoginLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
         <Image
           src={banner}
           alt="Bukhari Islamic Art Banner with Partners Logo."
-          width={474}
-          height={474}
+          width={1080}
+          height={149}
           className="z-0 object-contain w-full"
           priority
         />
@@ -47,8 +47,8 @@ const LoginLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
         <Image
           src={powered}
           alt="Bukhari Islamic Art Powered by VOYAGE."
-          width={474}
-          height={474}
+          width={1080}
+          height={108}
           className="z-0 object-contain w-full"
           priority
         />

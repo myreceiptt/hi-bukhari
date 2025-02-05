@@ -52,7 +52,8 @@ const ConnectButtons: React.FC = () => {
           ),
         }}
         detailsModal={{
-          assetTabs: ["token", "nft"],
+          // assetTabs: ["token", "nft"],
+          assetTabs: [],
         }}
         theme="light"
       />

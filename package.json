@@ -14,7 +14,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0",
-    "thirdweb": "^5.87.2"
+    "thirdweb": "^5.87.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -29,4 +29,3 @@
     "typescript": "^5"
   }
 }
- 

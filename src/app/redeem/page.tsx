@@ -1,3 +1,5 @@
+// /src/app/redeem/page.tsx
+
 "use client";
 
 // External libraries

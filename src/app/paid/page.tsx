@@ -1,3 +1,5 @@
+// /src/app/paid/page.tsx
+
 "use client";
 
 // External libraries

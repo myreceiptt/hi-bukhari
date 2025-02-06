@@ -219,24 +219,18 @@ const ClaimForm: React.FC = () => {
 
         {/* Success or Error Messages */}
         {pesanTunggu && (
-          <h4 className="text-left text-sm font-normal text-hitam-judul-body">
-            <code className="px-1 py-0.5 rounded font-normal text-hitam-judul-body">
-              {pesanTunggu}
-            </code>
+          <h4 className="text-left text-sm font-medium text-icon-wording">
+            {pesanTunggu}
           </h4>
         )}
         {pesanSukses && (
-          <h4 className="text-left text-sm font-normal text-hitam-judul-body">
-            <code className="px-1 py-0.5 rounded font-normal text-hitam-judul-body">
-              {pesanSukses}
-            </code>
+          <h4 className="text-left text-sm font-medium text-icon-wording">
+            {pesanSukses}
           </h4>
         )}
         {pesanGagal && (
-          <h4 className="text-left text-sm font-normal text-hitam-judul-body">
-            <code className="px-1 py-0.5 rounded font-normal text-hitam-judul-body">
-              {pesanGagal}
-            </code>
+          <h4 className="text-left text-sm font-medium text-icon-wording">
+            {pesanGagal}
           </h4>
         )}
 

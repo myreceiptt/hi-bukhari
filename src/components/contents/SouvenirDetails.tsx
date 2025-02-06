@@ -84,10 +84,8 @@ const SouvenirDetails: React.FC = () => {
   if (!tokenId || isNftLoading) {
     return (
       <main className="grid gap-4 place-items-center">
-        <h2 className="text-left text-sm font-normal text-hitam-judul-body">
-          <code className="px-1 py-0.5 rounded font-normal text-hitam-judul-body">
-            Loading...
-          </code>
+        <h2 className="text-left text-sm font-medium text-icon-wording">
+          Loading...
         </h2>
       </main>
     );
@@ -106,10 +104,8 @@ const SouvenirDetails: React.FC = () => {
             />
           </div>
         ) : (
-          <h2 className="text-left text-sm font-normal text-hitam-judul-body">
-            <code className="px-1 py-0.5 rounded font-normal text-hitam-judul-body">
-              No data available
-            </code>
+          <h2 className="text-left text-sm font-medium text-icon-wording">
+            No data available
           </h2>
         )}
 
@@ -165,20 +161,16 @@ const SouvenirDetails: React.FC = () => {
               Owned
             </h2>
             {loading ? (
-              <h2 className="text-left text-sm font-normal text-hitam-judul-body">
-                <code className="px-1 py-0.5 rounded font-normal text-hitam-judul-body">
-                  Loading...
-                </code>
+              <h2 className="text-left text-sm font-medium text-icon-wording">
+                Loading...
               </h2>
             ) : ethPrice ? (
               <h2 className="text-left text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold text-hitam-judul-body">
                 ${calculatePrice()}
               </h2>
             ) : (
-              <h2 className="text-left text-sm font-normal text-hitam-judul-body">
-                <code className="px-1 py-0.5 rounded font-normal text-hitam-judul-body">
-                  Failed
-                </code>
+              <h2 className="text-left text-sm font-medium text-icon-wording">
+                Failed
               </h2>
             )}
             <h2 className="text-left text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold text-hitam-judul-body">

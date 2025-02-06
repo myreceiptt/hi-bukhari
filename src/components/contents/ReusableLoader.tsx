@@ -6,11 +6,7 @@ interface LoaderProps {
 }
 
 const Loader: React.FC<LoaderProps> = ({ message }) => (
-  <h2 className="text-left text-sm font-normal text-hitam-judul-body">
-    <code className="px-1 py-0.5 rounded font-normal text-hitam-judul-body">
-      {message}
-    </code>
-  </h2>
+  <h2 className="text-left text-sm font-medium text-icon-wording">{message}</h2>
 );
 
 export default Loader;

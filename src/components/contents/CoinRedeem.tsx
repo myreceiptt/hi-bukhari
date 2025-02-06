@@ -21,10 +21,8 @@ const CoinRedeem: React.FC = () => {
   if (!smartAccount?.address) {
     return (
       <main className="grid gap-4 place-items-center">
-        <h2 className="text-left text-sm font-normal text-hitam-judul-body">
-          <code className="px-1 py-0.5 rounded font-normal text-hitam-judul-body">
-            Please log in first.
-          </code>
+        <h2 className="text-left text-sm font-medium text-icon-wording">
+          Please log in first.
         </h2>
       </main>
     );

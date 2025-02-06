@@ -281,13 +281,13 @@ const ClaimForm: React.FC = () => {
           disabled={isProcessing}
           onClick={() => {
             setIsProcessing(true);
-            setPesanTunggu("Bismillah! Processing...");
+            setPesanTunggu("Bismillah! Be patient and wait.");
             setPesanSukses(null);
             setPesanGagal(null);
           }}
           onTransactionSent={() => {
             setIsProcessing(true);
-            setPesanTunggu("Bismillah! Processing...");
+            setPesanTunggu("Bismillah! Be patient and wait.");
             setPesanSukses(null);
             setPesanGagal(null);
           }}

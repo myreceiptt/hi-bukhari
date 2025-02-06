@@ -63,8 +63,10 @@ const SouvenirDetails: React.FC = () => {
     if (ethPrice) {
       const tokenIdNumber = parseInt(tokenIdString, 10); // Convert tokenId to a number for comparison
       if ([0, 1, 2].includes(tokenIdNumber)) {
+        // if (tokenIdNumber > 22 && tokenIdNumber < 46) {
         return (0.0011 * ethPrice).toFixed(2); // Multiply and format to 2 decimal places
       } else if ([3, 4, 5].includes(tokenIdNumber)) {
+        // } else if (tokenIdNumber >= 0 && tokenIdNumber < 23) {
         return (0 * ethPrice).toFixed(2); // Price is 0, but still formatted
       }
     }
@@ -158,9 +160,12 @@ const SouvenirDetails: React.FC = () => {
           )}
 
           {/* Owned NFTs Info */}
-          <div className="w-full grid grid-cols-2">
+          <div className="w-full grid grid-cols-3">
             <h2 className="text-left text-sm font-medium text-icon-wording">
               Price
+            </h2>
+            <h2 className="text-left text-sm font-medium text-icon-wording">
+              Edition
             </h2>
             <h2 className="text-left text-sm font-medium text-icon-wording">
               Owned
@@ -182,6 +187,9 @@ const SouvenirDetails: React.FC = () => {
                 </code>
               </h2>
             )}
+            <h2 className="text-left text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold text-hitam-judul-body">
+              1899
+            </h2>
             <h2 className="text-left text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold text-hitam-judul-body">
               {ownedNfts?.toString() || "0"}
             </h2>
@@ -208,13 +216,13 @@ const SouvenirDetails: React.FC = () => {
             disabled={isProcessing}
             onClick={() => {
               setIsProcessing(true);
-              setPesanTunggu("Bismillah! Processing...");
+              setPesanTunggu("Bismillah! Be patient and wait.");
               setPesanSukses(null);
               setPesanGagal(null);
             }}
             onTransactionSent={() => {
               setIsProcessing(true);
-              setPesanTunggu("Bismillah! Processing...");
+              setPesanTunggu("Bismillah! Be patient and wait.");
               setPesanSukses(null);
               setPesanGagal(null);
             }}
@@ -232,6 +240,9 @@ const SouvenirDetails: React.FC = () => {
             }}>
             {Number(calculatePrice()) > 0 ? "Buy Now" : "Collect Now"}
           </ClaimButton>
+          <h4 className="text-left text-xs font-medium text-icon-wording">
+            &#42;Maximum 2 edition per owner.
+          </h4>
         </div>
       </div>
     </main>

@@ -1,23 +1,16 @@
 // External libraries
 import React from "react";
-import { FaWallet } from "react-icons/fa6";
+import { FaUserLarge } from "react-icons/fa6";
 import { ConnectButton } from "thirdweb/react";
 
 // Blockchain configurations
 import { client } from "@/config/client";
 import { dompets } from "@/config/dompets";
-import {
-  avalanche,
-  base,
-  baseSepolia,
-  ethereum,
-  optimism,
-  zora,
-} from "@/config/rantais";
+import { base, baseSepolia } from "@/config/rantais";
 import { tekeks } from "@/config/tekeks";
 import { tokeks } from "@/config/tokeks";
 
-const chains = [avalanche, base, baseSepolia, ethereum, optimism, zora];
+const chains = [base, baseSepolia];
 
 const ConnectButtons: React.FC = () => {
   return (
@@ -47,13 +40,13 @@ const ConnectButtons: React.FC = () => {
           },
           render: () => (
             <button className="w-10 h-10 flex items-center justify-center text-xl rounded-lg bg-box-icon text-icon-wording">
-              <FaWallet />
+              <FaUserLarge />
             </button>
           ),
         }}
         detailsModal={{
-          // assetTabs: ["token", "nft"],
-          assetTabs: [],
+          assetTabs: ["token", "nft"],
+          // assetTabs: [],
         }}
         theme="light"
       />

@@ -16,8 +16,10 @@ export default function FeaturedCards() {
       <div className="grid grid-cols-1 sm:grid-cols-3">
         {[
           {
-            href: "/paid",
-            src: "/images/bukhari-fa-paid.png",
+            // href: "/paid",
+            href: "#",
+            // src: "/images/bukhari-fa-paid.png",
+            src: "/images/bukhari-fa-login-02-17.png",
             alt: "Affordable Exclusive Digital Souvenir",
           },
           {

@@ -29,6 +29,17 @@ const SouvenirsList: React.FC<SouvenirsListProps> = ({
 }) => {
   const smartAccount = useActiveAccount();
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
+  const totalPages = Math.ceil(tokenIds.length / itemsPerPage);
+
+  // Get the tokens for the current page
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const paginatedTokenIds = tokenIds.slice(
+    startIndex,
+    startIndex + itemsPerPage
+  );
+
   return (
     <main className="grid gap-4 place-items-center">
       <div className="w-full flex flex-col gap-2 sm:items-start items-center px-0 sm:px-4">
@@ -39,8 +50,10 @@ const SouvenirsList: React.FC<SouvenirsListProps> = ({
           {title2}
         </h2>
       </div>
+
+      {/* Pagination inside this <div>, max 6 tokenId per page */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        {tokenIds.map((tokenId) => (
+        {paginatedTokenIds.map((tokenId) => (
           <NFTLister
             key={tokenId}
             receiverAddress={smartAccount?.address}
@@ -48,6 +61,25 @@ const SouvenirsList: React.FC<SouvenirsListProps> = ({
             tokenId={tokenId}
           />
         ))}
+      </div>
+
+      {/* Pagination Controls */}
+      <div className="flex items-center justify-center gap-4 mt-4">
+        <button
+          onClick={() => setCurrentPage(currentPage - 1)}
+          disabled={currentPage === 1}
+          className="px-4 py-2 text-back-ground bg-hitam-judul-body text-base font-semibold rounded-lg disabled:opacity-50">
+          Previous
+        </button>
+        <span className="text-sm font-semibold">
+          Page {currentPage} of {totalPages}
+        </span>
+        <button
+          onClick={() => setCurrentPage(currentPage + 1)}
+          disabled={currentPage === totalPages}
+          className="px-4 py-2 text-back-ground bg-hitam-judul-body text-base font-semibold rounded-lg disabled:opacity-50">
+          Next
+        </button>
       </div>
     </main>
   );

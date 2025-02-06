@@ -2,21 +2,23 @@
 
 import React from "react";
 import { getContract } from "thirdweb";
-import { useReadContract } from "thirdweb/react";
+import { useReadContract, useActiveWalletChain } from "thirdweb/react";
 import { FaImage } from "react-icons/fa6";
 import { client } from "@/config/client";
 import { bukhariVirtualCollectibles } from "@/config/contracts";
-import { base } from "thirdweb/chains";
 
 interface OwnedNFTsProps {
   account: { address: string } | null;
 }
 
 export default function OwnedNFTs({ account }: OwnedNFTsProps) {
+  // Get the currently connected blockchain
+  const activeChain = useActiveWalletChain();
+
   const contract = getContract({
     client,
     address: bukhariVirtualCollectibles.address,
-    chain: base,
+    chain: activeChain ?? undefined, // Ensure chain is set
   });
 
   const { data: ownedNFTs } = useReadContract({

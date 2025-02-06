@@ -1,7 +1,7 @@
 // External libraries
 import Image from "next/image";
 import Link from "next/link";
-import { FaBagShopping, FaSistrix } from "react-icons/fa6";
+import { FaBagShopping, FaWallet, FaSistrix } from "react-icons/fa6";
 
 // Components libraries
 import ConnectButtons from "./ConnectButtons";
@@ -38,10 +38,13 @@ export default function Header() {
           <button className="sm:hidden w-10 h-10 flex items-center justify-center text-xl rounded-lg bg-box-icon text-icon-wording">
             <FaSistrix />
           </button>
+          <ConnectButtons />
+          <button className="w-10 h-10 flex items-center justify-center text-xl rounded-lg bg-box-icon text-icon-wording">
+            <FaWallet />
+          </button>
           <button className="w-10 h-10 flex items-center justify-center text-xl rounded-lg bg-box-icon text-icon-wording">
             <FaBagShopping />
           </button>
-          <ConnectButtons />
         </div>
       </div>
     </header>

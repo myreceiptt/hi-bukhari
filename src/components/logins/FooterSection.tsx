@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
                 <Link href="/free">Free Claim</Link>
               </li>
               <li>
-                <Link href="/paid">Paid Claim</Link>
+                <Link href="#">Paid Claim</Link>
               </li>
               <li>
                 <Link href="/redeem">Coins Reward</Link>

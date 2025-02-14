@@ -60,6 +60,7 @@ const SearchPage = () => {
       }
     };
 
+    setIsLoading(true);
     fetchTokens();
   }, [query]);
 

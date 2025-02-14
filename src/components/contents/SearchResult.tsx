@@ -1,4 +1,4 @@
-// /src/components/contents/SouvenirList.tsx
+// /src/components/contents/SearchResult.tsx
 
 "use client";
 
@@ -15,19 +15,19 @@ import { MediaRenderer, useReadContract } from "thirdweb/react";
 import { client } from "@/config/client";
 import { bukhariOpenDoor } from "@/config/contracts";
 
-type SouvenirsListProps = {
-  title1: string;
-  title2: string;
+type SearchResultProps = {
   tokenIds: string[];
+  query: string;
+  isLoading: boolean;
 };
 
-const INITIAL_ITEMS = 6; // Initial NFTs displayed
-const ITEMS_PER_LOAD = 3; // NFTs to load/unload per button click
+const INITIAL_ITEMS = 6; // Start with 6 NFTs
+const ITEMS_PER_LOAD = 3; // Load 3 more per click
 
-const SouvenirsList: React.FC<SouvenirsListProps> = ({
-  title1,
-  title2,
+const SearchResult: React.FC<SearchResultProps> = ({
   tokenIds,
+  query,
+  isLoading,
 }) => {
   const [visibleCount, setVisibleCount] = useState(INITIAL_ITEMS);
   const listRef = useRef<HTMLDivElement>(null);
@@ -51,19 +51,47 @@ const SouvenirsList: React.FC<SouvenirsListProps> = ({
 
   return (
     <main className="grid gap-4 place-items-center">
-      {tokenIds.length > 0 ? (
+      {isLoading ? (
+        <>
+          {/* Top Section - Content Box */}
+          <div className="w-full flex flex-col gap-2 items-center justify-center text-center px-0 sm:px-4">
+            <h2 className="text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal text-hitam-judul-body">
+              Loading...
+            </h2>
+            <h3 className="text-center text-sm font-medium text-icon-wording">
+              Please wait a moment, we are still processing for your search
+              result.
+            </h3>
+          </div>
+
+          {/* Bottom Section - Background Image */}
+          <div className="bottom-0 left-0 w-full h-full">
+            <Image
+              src="/images/bukhari-fa-login-02-12.png"
+              alt="Background Image"
+              width={1430}
+              height={541}
+              objectFit="cover"
+              objectPosition="top"
+              priority
+            />
+          </div>
+        </>
+      ) : tokenIds.length > 0 ? (
         <>
           <div className="w-full flex flex-col gap-2 sm:items-start items-center px-0 sm:px-4">
             <h1 className="text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-hitam-judul-body">
-              {title1}
+              Search Result
             </h1>
             <h2 className="text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-hitam-judul-body">
-              {title2}
+              For &quot;{query}&quot; Terms
             </h2>
           </div>
 
           {/* NFT List */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4" ref={listRef}>
+          <div
+            className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:items-start items-center"
+            ref={listRef}>
             {tokenIds.slice(0, visibleCount).map((tokenId, index) => (
               <motion.div
                 key={tokenId}
@@ -99,11 +127,12 @@ const SouvenirsList: React.FC<SouvenirsListProps> = ({
           {/* Top Section - Content Box */}
           <div className="w-full flex flex-col gap-2 items-center justify-center text-center px-0 sm:px-4">
             <h2 className="text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal text-hitam-judul-body">
-              No data available.
+              No data found.
             </h2>
             <h3 className="text-center text-sm font-medium text-icon-wording">
-              There is no data available. Please try using the search form or go
-              back to the home page and start over.
+              There is no data found matching your search. Please try searching
+              again using other terms or go back to the home page and start
+              over.
             </h3>
           </div>
           <div className="grid grid-cols-1 mt-2 md:mt-4 mb-4 md:mb-8 lg:mb-12">
@@ -187,11 +216,11 @@ const NFTLister: React.FC<NFTListerProps> = ({ dropContract, tokenId }) => {
         </>
       ) : (
         <h2 className="text-left text-sm font-medium text-icon-wording">
-          No data available.
+          No data found.
         </h2>
       )}
     </div>
   );
 };
 
-export default SouvenirsList;
+export default SearchResult;

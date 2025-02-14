@@ -1,3 +1,5 @@
+// /src/components/contents/AccessMessage.tsx
+
 // External libraries
 import Image from "next/image";
 import React from "react";

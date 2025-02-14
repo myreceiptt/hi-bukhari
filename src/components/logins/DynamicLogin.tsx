@@ -1,3 +1,5 @@
+// /src/components/logins/DynamicLogin.tsx
+
 // External libraries
 import React from "react";
 import { useActiveAccount } from "thirdweb/react";

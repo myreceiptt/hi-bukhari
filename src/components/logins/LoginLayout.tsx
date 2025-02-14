@@ -1,3 +1,5 @@
+// /src/components/logins/LoginLayout.tsx
+
 // External libraries
 import Image from "next/image";
 import Link from "next/link";

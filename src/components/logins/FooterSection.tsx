@@ -1,3 +1,5 @@
+// /src/components/logins/FooterSection.tsx
+
 "use client";
 
 // External libraries

@@ -1,3 +1,5 @@
+// /src/components/logins/ConnectButtons.tsx
+
 // External libraries
 import React from "react";
 import { FaUserLarge } from "react-icons/fa6";
@@ -22,12 +24,13 @@ const ConnectButtons: React.FC = () => {
           url: "https://galeri.harmoniistiqlal.com",
           description:
             "Login to Bukhari Islamic Art Gallery in Harmoni Istiqlal.",
-          logoUrl: "https://galeri.harmoniistiqlal.com/bukhari-fa-login-02.png",
+          logoUrl:
+            "https://galeri.harmoniistiqlal.com/images/bukhari-fa-login-02-11.png",
         }}
         wallets={dompets}
         accountAbstraction={{
           factoryAddress: "0x82EC684C86b84AC60b5e162EC87d6DCF4213D468",
-          chain: baseSepolia,
+          chain: base,
           sponsorGas: true,
         }}
         chains={chains}

@@ -1,3 +1,5 @@
+// /src/config/tokeks.ts
+
 // Blockchain configurations
 import { base, baseSepolia } from "@/config/rantais";
 

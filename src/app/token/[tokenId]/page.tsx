@@ -1,3 +1,5 @@
+// /src/app/token/[tokenId]/page.tsx
+
 "use client";
 
 // External libraries

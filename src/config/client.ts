@@ -1,3 +1,5 @@
+// /src/config/client.ts
+
 // External libraries
 import { createThirdwebClient } from "thirdweb";
 

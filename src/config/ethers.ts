@@ -1,3 +1,5 @@
+// /src/config/ethers.ts
+
 export async function FetchEthereumPrice(): Promise<number | null> {
   try {
     const response = await fetch(

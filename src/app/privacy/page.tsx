@@ -1,3 +1,5 @@
+// /src/app/privacy/page.tsx
+
 // External libraries
 import React from "react";
 import Image from "next/image";

@@ -1,3 +1,5 @@
+// /src/config/osloid.ts
+
 /**
  * All os/o ID should be exported from this file.
  */

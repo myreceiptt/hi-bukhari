@@ -1,3 +1,5 @@
+// /src/components/contents/RedeemForm.tsx
+
 "use client";
 
 // External libraries
@@ -9,15 +11,10 @@ import { ClaimButton } from "thirdweb/react";
 
 // Blockchain configurations
 import { client } from "@/config/client";
-// import { bonVoyageDrop } from "@/config/contracts";
-import { b0nV0yageDrop } from "@/config/contracts";
+import { bonVoyageDrop } from "@/config/contracts";
 
 const ClaimForm: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const [pesanTunggu, setPesanTunggu] = useState<string | null>(null);
-  const [pesanSukses, setPesanSukses] = useState<string | null>(null);
-  const [pesanGagal, setPesanGagal] = useState<string | null>(null);
 
   const [amount, setAmount] = useState<string>("1");
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -35,6 +32,9 @@ const ClaimForm: React.FC = () => {
     }
   };
 
+  const [pesanTunggu, setPesanTunggu] = useState<string | null>(null);
+  const [pesanSukses, setPesanSukses] = useState<string | null>(null);
+  const [pesanGagal, setPesanGagal] = useState<string | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
 
   return (
@@ -114,7 +114,7 @@ const ClaimForm: React.FC = () => {
                     VOYAGE
                   </span>{" "}
                   but also weaving itself into the very fabric of decentralised
-                  data traffic. What was once a mere expression of well-wishes,
+                  data traffic. What was once a mere expression of well-wishes,{" "}
                   <span className="text-icon-wording text-sm font-semibold leading-relaxed">
                     BON
                   </span>{" "}
@@ -175,8 +175,10 @@ const ClaimForm: React.FC = () => {
                   </span>
                   <br />
                   <br />
+                  🍌☕🍌☕
+                  <br />
                   <span className="text-icon-wording text-xs font-semibold leading-relaxed">
-                    Prof. NOTA v.11.0 🍌☕🍌☕
+                    Prof. NOTA v.11.11.11
                   </span>
                   <br />
                   <br />
@@ -213,7 +215,8 @@ const ClaimForm: React.FC = () => {
         </div>
         <h2 className="text-left text-sm font-medium text-icon-wording">
           Redeem your coins rewards by claiming the $BON Dosh, the ERC20 tokens
-          on the {b0nV0yageDrop.chain.name} blockchain using your Smart Account
+          on the {bonVoyageDrop.chain.name} blockchain using your Smart Account
+          {/* on the {b0nV0yageDrop.chain.name} blockchain using your Smart Account */}
           wallet.
         </h2>
 
@@ -250,6 +253,7 @@ const ClaimForm: React.FC = () => {
               onChange={handleAmountChange}
               min="1"
               max="11"
+              placeholder={"Enter amount (1-11)"}
               className="ml-2 w-full bg-transparent outline-none text-xs md:text-sm text-hitam-judul-body placeholder-icon-wording"
             />
           </div>
@@ -265,14 +269,14 @@ const ClaimForm: React.FC = () => {
                 : "border-2 border-solid border-back-ground text-back-ground bg-hitam-judul-body"
             }
           `}
-          contractAddress={b0nV0yageDrop.address}
-          chain={b0nV0yageDrop.chain}
+          contractAddress={bonVoyageDrop.address}
+          chain={bonVoyageDrop.chain}
           client={client}
           claimParams={{
             type: "ERC20",
             quantity: amount,
           }}
-          disabled={isProcessing}
+          disabled={isProcessing || !amount}
           onClick={() => {
             setIsProcessing(true);
             setPesanTunggu("Bismillah! Be patient and wait.");

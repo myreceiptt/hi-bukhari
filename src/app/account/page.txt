@@ -1,3 +1,5 @@
+// /src/app/account/page.tsx
+
 "use client";
 
 // External libraries

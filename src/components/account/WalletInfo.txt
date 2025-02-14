@@ -1,3 +1,5 @@
+// /src/components/account/WalletInfo.tsx
+
 "use client";
 
 import React from "react";

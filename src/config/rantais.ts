@@ -1,3 +1,5 @@
+// /src/config/rantais.ts
+
 // External libraries
 import { defineChain } from "thirdweb";
 

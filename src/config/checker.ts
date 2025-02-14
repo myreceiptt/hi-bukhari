@@ -1,13 +1,16 @@
+// /src/config/checker.ts
+
 "use client";
 
 // External libraries
 import React, { useEffect } from "react";
 import { getContract } from "thirdweb";
 import { useReadContract } from "thirdweb/react";
+// import { balanceOfBatch } from "thirdweb/extensions/erc1155";
 
 // Blockchain configurations
 import { client } from "@/config/client";
-import { bukhariVirtualCollectibles } from "@/config/contracts";
+import { bukhariOpenDoor } from "@/config/contracts";
 
 interface TokenCheckProps {
   userAddress: string;
@@ -20,75 +23,31 @@ const TokenCheck: React.FC<TokenCheckProps> = ({
 }) => {
   const contract = getContract({
     client,
-    address: bukhariVirtualCollectibles.address,
-    chain: bukhariVirtualCollectibles.chain,
+    address: bukhariOpenDoor.address,
+    chain: bukhariOpenDoor.chain,
   });
 
-  // Token 0, 1, and 2.
-  const { data: ownedToken0 } = useReadContract({
-    contract,
-    method: "function balanceOf(address account, uint256 id) returns (uint256)",
-    params: [userAddress, 0n],
-  });
+  // Generate an array of token IDs from 0 to 22
+  const tokenIds = Array.from({ length: 23 }, (_, index) => BigInt(index));
 
-  const { data: ownedToken1 } = useReadContract({
-    contract,
-    method: "function balanceOf(address account, uint256 id) returns (uint256)",
-    params: [userAddress, 1n],
-  });
+  // Repeat the user's address for each token ID (required for batch query)
+  const userAddresses = new Array(tokenIds.length).fill(userAddress);
 
-  const { data: ownedToken2 } = useReadContract({
+  // Use `balanceOfBatch` to fetch all balances in a single call
+  const { data: balances } = useReadContract({
     contract,
-    method: "function balanceOf(address account, uint256 id) returns (uint256)",
-    params: [userAddress, 2n],
-  });
-
-  // Token 3, 4, and 5.
-  const { data: ownedToken3 } = useReadContract({
-    contract,
-    method: "function balanceOf(address account, uint256 id) returns (uint256)",
-    params: [userAddress, 3n],
-  });
-
-  const { data: ownedToken4 } = useReadContract({
-    contract,
-    method: "function balanceOf(address account, uint256 id) returns (uint256)",
-    params: [userAddress, 4n],
-  });
-
-  const { data: ownedToken5 } = useReadContract({
-    contract,
-    method: "function balanceOf(address account, uint256 id) returns (uint256)",
-    params: [userAddress, 5n],
+    method:
+      "function balanceOfBatch(address[] accounts, uint256[] ids) returns (uint256[])",
+    params: [userAddresses, tokenIds],
   });
 
   useEffect(() => {
-    if (
-      ownedToken0 !== undefined ||
-      ownedToken1 !== undefined ||
-      ownedToken2 !== undefined ||
-      ownedToken3 !== undefined ||
-      ownedToken4 !== undefined ||
-      ownedToken5 !== undefined
-    ) {
-      const hasTokens =
-        (ownedToken0 && ownedToken0 > 0n) ||
-        (ownedToken1 && ownedToken1 > 0n) ||
-        (ownedToken2 && ownedToken2 > 0n) ||
-        (ownedToken3 && ownedToken3 > 0n) ||
-        (ownedToken4 && ownedToken4 > 0n) ||
-        (ownedToken5 && ownedToken5 > 0n);
-      onAccessChange(!!hasTokens);
+    if (balances !== undefined) {
+      // Check if user owns any token (balance > 0)
+      const hasTokens = balances.some((balance: bigint) => balance > 0n);
+      onAccessChange(hasTokens);
     }
-  }, [
-    ownedToken0,
-    ownedToken1,
-    ownedToken2,
-    ownedToken3,
-    ownedToken4,
-    ownedToken5,
-    onAccessChange,
-  ]);
+  }, [balances, onAccessChange]);
 
   return null; // This component doesn't render anything itself
 };

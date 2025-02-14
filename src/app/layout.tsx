@@ -1,3 +1,5 @@
+// /src/app/layout.tsx
+
 // External libraries
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";

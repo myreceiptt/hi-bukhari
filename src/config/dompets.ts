@@ -1,3 +1,5 @@
+// /src/config/dompets.ts
+
 // External libraries
 import { createWallet, inAppWallet } from "thirdweb/wallets";
 

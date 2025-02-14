@@ -1,3 +1,5 @@
+// /src/components/contents/CoinRedeem.tsx
+
 "use client";
 
 // External libraries

@@ -51,6 +51,7 @@ const SearchResult: React.FC<SearchResultProps> = ({
 
   return (
     <main className="grid gap-4 place-items-center">
+      {/* Show Loading Immediately */}
       {isLoading ? (
         <>
           {/* Top Section - Content Box */}
@@ -79,6 +80,7 @@ const SearchResult: React.FC<SearchResultProps> = ({
         </>
       ) : tokenIds.length > 0 ? (
         <>
+          {/* Search Results */}
           <div className="w-full flex flex-col gap-2 sm:items-start items-center px-0 sm:px-4">
             <h1 className="text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-hitam-judul-body">
               Search Result

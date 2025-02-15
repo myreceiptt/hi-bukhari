@@ -202,8 +202,13 @@ const SouvenirDetails: React.FC = () => {
               quantity: 1n,
               tokenId: tokenIdBigInt,
             }}
+            // disabled={Boolean(
+            //   isProcessing || (ownedNfts && Number(ownedNfts) >= 2)
+            // )}
             disabled={Boolean(
-              isProcessing || (ownedNfts && Number(ownedNfts) >= 2)
+              isProcessing ||
+                (ownedNfts && Number(ownedNfts) >= 2) ||
+                Number(price) > 0 // 🔥 Disable if price is greater than 0
             )}
             onClick={() => {
               setIsProcessing(true);

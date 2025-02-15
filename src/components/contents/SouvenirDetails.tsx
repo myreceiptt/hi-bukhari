@@ -17,6 +17,7 @@ import {
 // Blockchain configurations
 import { client } from "@/config/client";
 import { bukhariOpenDoor } from "@/config/contracts";
+import { base } from "@/config/rantais";
 
 const SouvenirDetails: React.FC = () => {
   const router = useRouter();
@@ -52,7 +53,12 @@ const SouvenirDetails: React.FC = () => {
   const calculatePrice = () => {
     if (isNaN(tokenIdNumber)) return "0.00";
 
-    return tokenIdNumber >= 24 ? "4.74" : "0.00";
+    // return tokenIdNumber >= 24 ? "4.74" : "0.00";
+    return [0, 2, 3, 7, 8, 9, 10, 23, 24, 25, 26, 27, 28].includes(
+      tokenIdNumber
+    )
+      ? "4.74"
+      : "0.00";
   };
 
   // Ensure tokenId exists, otherwise redirect
@@ -71,6 +77,20 @@ const SouvenirDetails: React.FC = () => {
       </main>
     );
   }
+
+  // Configure `payModal` to accept USDC
+  const payModalConfig = {
+    supportedTokens: {
+      [base.id]: [
+        {
+          address: "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+          name: "USD Coin",
+          symbol: "USDC",
+          icon: "/erc20-icons/usdc.png",
+        },
+      ],
+    },
+  };
 
   return (
     <main className="grid gap-4 place-items-center">
@@ -174,6 +194,7 @@ const SouvenirDetails: React.FC = () => {
               }
             `}
             contractAddress={bukhariOpenDoor.address}
+            payModal={payModalConfig}
             chain={bukhariOpenDoor.chain}
             client={client}
             claimParams={{

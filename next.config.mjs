@@ -3,7 +3,7 @@ const nextConfig = {
   // ✅ Fix: Turbopack requires an object, not just `true`
   experimental: {
     turbo: {
-      loaders: {}, // Enables default Turbopack configuration
+      rules: {}, // Enables default Turbopack configuration
     },
   },
 

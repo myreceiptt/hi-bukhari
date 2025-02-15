@@ -11,31 +11,7 @@ import DynamicLoginPage from "@/components/logins/DynamicLogin";
 
 const pageTitle1 = "Exclusive";
 const pageTitle2 = "Virtual Collectibles";
-const tokenIds = ["0", "1", "2"];
-// const tokenIds = [
-//   "0",
-//   "1",
-//   "2",
-//   "3",
-//   "4",
-//   "5",
-//   "7",
-//   "8",
-//   "9",
-//   "10",
-//   "11",
-//   "12",
-//   "13",
-//   "14",
-//   "15",
-//   "16",
-//   "17",
-//   "18",
-//   "19",
-//   "20",
-//   "21",
-//   "22",
-// ];
+const tokenIds = ["0", "2", "3", "7", "8", "9", "10", "23", "24", "25", "26", "27", "28"];
 
 const PagePaid: React.FC = () => (
   <DynamicLoginPage

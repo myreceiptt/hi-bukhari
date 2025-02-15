@@ -57,7 +57,7 @@ const SouvenirDetails: React.FC = () => {
     return [0, 2, 3, 7, 8, 9, 10, 23, 24, 25, 26, 27, 28].includes(
       tokenIdNumber
     )
-      ? "4.74"
+      ? "x.xx"
       : "0.00";
   };
 

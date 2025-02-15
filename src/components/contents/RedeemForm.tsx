@@ -216,8 +216,8 @@ const ClaimForm: React.FC = () => {
         <h2 className="text-left text-sm font-medium text-icon-wording">
           Redeem your coins rewards by claiming the $BON Dosh, the ERC20 tokens
           on the {bonVoyageDrop.chain.name} blockchain using your Smart Account
-          {/* on the {b0nV0yageDrop.chain.name} blockchain using your Smart Account */}
           wallet.
+          {/* on the {b0nV0yageDrop.chain.name} blockchain using your Smart Account wallet.*/}
         </h2>
 
         {/* Success or Error Messages */}

@@ -181,7 +181,8 @@ const NFTLister: React.FC<NFTListerProps> = ({ dropContract, tokenId }) => {
           </div>
           <Link href={`/token/${tokenId}`}>
             <button className="w-full rounded-lg p-2 text-back-ground bg-hitam-judul-body text-base font-semibold">
-              {Number(price) > 0 ? "Coming Soon" : "Collect Now"}
+              {/* {Number(price) > 0 ? "Coming Soon" : "Collect Now"} */}
+              {Number(price) !== 0 ? "Coming Soon" : "Collect Now"}
             </button>
           </Link>
         </>

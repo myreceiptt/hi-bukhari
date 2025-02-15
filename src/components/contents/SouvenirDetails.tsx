@@ -229,7 +229,8 @@ const SouvenirDetails: React.FC = () => {
               setIsProcessing(false);
               setPesanTunggu(null);
             }}>
-            {Number(calculatePrice()) > 0 ? "Coming Soon" : "Collect Now"}
+            {/* {Number(calculatePrice()) > 0 ? "Coming Soon" : "Collect Now"} */}
+            {Number(calculatePrice()) !== 0 ? "Coming Soon" : "Collect Now"}
           </ClaimButton>
           <h4 className="text-left text-xs font-medium text-icon-wording">
             &#42;Maximum 2 editions per owner.

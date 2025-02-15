@@ -148,8 +148,7 @@ const NFTLister: React.FC<NFTListerProps> = ({ dropContract, tokenId }) => {
   });
 
   // Calculate Price: 0 for 0-22, $4.74 for others
-  // const price = tokenIdNumber >= 24 ? "4.74" : "0.00";
-  const price = [0, 2, 3, 7, 8, 9, 10, 23, 24, 25, 26, 27, 28].includes(tokenIdNumber) ? "x.xx" : "0.00";
+  const price = tokenIdNumber >= 23 ? "x.xx" : "0.00";
 
   return (
     <div className="w-full grid grid-cols-1 gap-4 p-4 border border-solid border-border-tombol rounded-3xl">

@@ -53,12 +53,7 @@ const SouvenirDetails: React.FC = () => {
   const calculatePrice = () => {
     if (isNaN(tokenIdNumber)) return "0.00";
 
-    // return tokenIdNumber >= 24 ? "4.74" : "0.00";
-    return [0, 2, 3, 7, 8, 9, 10, 23, 24, 25, 26, 27, 28].includes(
-      tokenIdNumber
-    )
-      ? "x.xx"
-      : "0.00";
+    return tokenIdNumber >= 23 ? "x.xx" : "0.00";
   };
 
   // Ensure tokenId exists, otherwise redirect

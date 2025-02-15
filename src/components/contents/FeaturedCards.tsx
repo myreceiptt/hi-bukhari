@@ -19,7 +19,6 @@ export default function FeaturedCards() {
         {[
           {
             href: "/paid",
-            // href: "#",
             // src: "/images/bukhari-fa-paid.png",
             src: "/images/bukhari-fa-login-02-17.png",
             alt: "Affordable Exclusive Digital Souvenir",

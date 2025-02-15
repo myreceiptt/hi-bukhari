@@ -12,10 +12,17 @@ import DynamicLoginPage from "@/components/logins/DynamicLogin";
 const pageTitle1 = "Freemium";
 const pageTitle2 = "Virtual Collectibles";
 const tokenIds = [
+  "0",
   "1",
+  "2",
+  "3",
   "4",
   "5",
   "6",
+  "7",
+  "8",
+  "9",
+  "10",
   "11",
   "12",
   "13",

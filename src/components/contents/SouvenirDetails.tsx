@@ -203,7 +203,8 @@ const SouvenirDetails: React.FC = () => {
             disabled={Boolean(
               isProcessing ||
                 (ownedNfts && Number(ownedNfts) >= 2) ||
-                Number(calculatePrice()) > 0 // 🔥 Disable if price is greater than 0
+                // Number(calculatePrice()) > 0 // 🔥 Disable if price is greater than 0
+                Number(calculatePrice()) !== 0 // 🔥 Disable if price is greater than 0
             )}
             onClick={() => {
               setIsProcessing(true);

@@ -246,7 +246,7 @@ const SouvenirDetails: React.FC = () => {
 const NFTDescription: React.FC<{
   description: string;
   tokenIdNumber: number;
-}> = ({ description, tokenIdNumber }) => {
+}> = ({ description }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const paragraphs = description

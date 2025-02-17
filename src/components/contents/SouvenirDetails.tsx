@@ -280,21 +280,21 @@ const NFTDescription: React.FC<{
         <div className="flex justify-end items-center gap-4 pt-2 mb-2">
           {isExpanded && (
             <>
-              <Link
+              {/* <Link
                 href={`https://opensea.io/assets/base/0xc226653e9c043674a48c6b7be33526771c34389a/${tokenIdNumber}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs font-medium text-hitam-judul-body hover:underline cursor-pointer">
                 View on OpenSea
-              </Link>
+              </Link> */}
 
-              <Link
+              {/* <Link
                 href={`https://rarible.com/token/base/0xc226653e9c043674a48c6b7be33526771c34389a:${tokenIdNumber}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs font-medium text-hitam-judul-body hover:underline cursor-pointer">
                 View on Rarible
-              </Link>
+              </Link> */}
             </>
           )}
 

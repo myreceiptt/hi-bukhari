@@ -47,7 +47,7 @@ export default function Header() {
             placeholder="Search"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="ml-2 w-full bg-transparent outline-none text-xs md:text-sm text-hitam-judul-body placeholder-icon-wording"
+            className="ml-2 w-full bg-transparent outline-hidden text-xs md:text-sm text-hitam-judul-body placeholder-icon-wording"
           />
         </form>
 
@@ -71,7 +71,7 @@ export default function Header() {
                 placeholder="Search"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="ml-2 w-full bg-transparent outline-none text-sm text-hitam-judul-body placeholder-icon-wording"
+                className="ml-2 w-full bg-transparent outline-hidden text-sm text-hitam-judul-body placeholder-icon-wording"
               />
               <button type="submit" className="text-sm font-semibold px-4">
                 Go

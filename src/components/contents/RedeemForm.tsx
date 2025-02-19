@@ -57,7 +57,7 @@ const ClaimForm: React.FC = () => {
 
         {/* Pop-up Modal */}
         {isOpen && (
-          <div className="fixed inset-0 flex items-center justify-center bg-hitam-judul-body/45 backdrop-blur-sm z-50">
+          <div className="fixed inset-0 flex items-center justify-center bg-hitam-judul-body/45 backdrop-blur-xs z-50">
             {/* Pop-up Box */}
             <div className="bg-back-ground rounded-2xl shadow-lg relative w-[89vw] h-[89vh] sm:w-[74vw] sm:h-[74vh] lg:w-[47vw] lg:h-[47vh] flex flex-col">
               {/* Close Button */}
@@ -254,7 +254,7 @@ const ClaimForm: React.FC = () => {
               min="1"
               max="11"
               placeholder={"Enter amount (1-11)"}
-              className="ml-2 w-full bg-transparent outline-none text-xs md:text-sm text-hitam-judul-body placeholder-icon-wording"
+              className="ml-2 w-full bg-transparent outline-hidden text-xs md:text-sm text-hitam-judul-body placeholder-icon-wording"
             />
           </div>
         </div>

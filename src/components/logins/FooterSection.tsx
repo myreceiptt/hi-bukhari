@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
               <input
                 type="email"
                 placeholder="enter your email address"
-                className="text-xs md:text-sm w-2/3 lg:w-3/5 px-2 py-0 border border-border-tombol rounded-l-lg bg-transparent focus:outline-none placeholder-icon-wording text-border-tombol"
+                className="text-xs md:text-sm w-2/3 lg:w-3/5 px-2 py-0 border border-border-tombol rounded-l-lg bg-transparent focus:outline-hidden placeholder-icon-wording text-border-tombol"
               />
               <button className="text-xs md:text-sm px-6 py-2 bg-back-ground font-semibold rounded-r-lg text-hitam-judul-body">
                 Subscribe

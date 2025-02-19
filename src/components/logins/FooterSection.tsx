@@ -14,27 +14,16 @@ import {
   FaYoutube,
 } from "react-icons/fa6";
 
+// Components libraries
+import Subscribe from "./SubscribeForm";
+
 const Footer: React.FC = () => {
   return (
     <footer className="w-full bg-hitam-judul-body py-4 px-4 md:px-20">
       <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-4">
         <div className="w-full flex flex-col justify-items-center gap-4">
           {/* Newsletter Signup */}
-          <div className="w-full flex flex-col justify-center sm:justify-start items-center sm:items-start">
-            <h3 className="text-center sm:text-left text-sm md:text-base font-semibold text-back-ground">
-              Catch our latest updates
-            </h3>
-            <div className="w-full flex flex-row justify-center sm:justify-start mt-2">
-              <input
-                type="email"
-                placeholder="enter your email address"
-                className="text-xs md:text-sm w-2/3 lg:w-3/5 px-2 py-0 border border-border-tombol rounded-l-lg bg-transparent focus:outline-hidden placeholder-icon-wording text-border-tombol"
-              />
-              <button className="text-xs md:text-sm px-6 py-2 bg-back-ground font-semibold rounded-r-lg text-hitam-judul-body">
-                Subscribe
-              </button>
-            </div>
-          </div>
+          <Subscribe />
         </div>
         <div className="w-full flex flex-col sm:flex-row justify-between gap-4">
           {/* Social Media Links */}

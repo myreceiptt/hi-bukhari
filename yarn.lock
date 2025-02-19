@@ -2788,12 +2788,12 @@ fraction.js@^4.3.7:
   resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-4.3.7.tgz#06ca0085157e42fda7f9e726e79fefc4068840f7"
   integrity sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==
 
-framer-motion@^12.4.3:
-  version "12.4.3"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-12.4.3.tgz#e6a751b772421d849eea6228dbc6f160e098b869"
-  integrity sha512-rsMeO7w3dKyNG09o3cGwSH49iHU+VgDmfSSfsX+wfkO3zDA6WWkh4sUsMXd155YROjZP+7FTIhDrBYfgZeHjKQ==
+framer-motion@^12.4.5:
+  version "12.4.5"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-12.4.5.tgz#c739fe57da5508f8f4d8b34f18fca71d942e8987"
+  integrity sha512-9+8wglyIJFeUpVg4U8Ohvoo5x7zmvRqawWXhEUThcYdwL/5A1/OkLvQo68Zz5taUE11HKG/Ex+LPaN2+fMkRdA==
   dependencies:
-    motion-dom "^12.0.0"
+    motion-dom "^12.4.5"
     motion-utils "^12.0.0"
     tslib "^2.4.0"
 
@@ -3549,10 +3549,10 @@ mipd@0.0.7:
   resolved "https://registry.yarnpkg.com/mipd/-/mipd-0.0.7.tgz#bb5559e21fa18dc3d9fe1c08902ef14b7ce32fd9"
   integrity sha512-aAPZPNDQ3uMTdKbuO2YmAw2TxLHO0moa4YKAyETM/DTj5FloZo+a+8tU+iv4GmW+sOxKLSRwcSFuczk+Cpt6fg==
 
-motion-dom@^12.0.0:
-  version "12.0.0"
-  resolved "https://registry.yarnpkg.com/motion-dom/-/motion-dom-12.0.0.tgz#7045c63642eecbcc04c40b4457ebb07b3c2b3d0c"
-  integrity sha512-CvYd15OeIR6kHgMdonCc1ihsaUG4MYh/wrkz8gZ3hBX/uamyZCXN9S9qJoYF03GqfTt7thTV/dxnHYX4+55vDg==
+motion-dom@^12.4.5:
+  version "12.4.5"
+  resolved "https://registry.yarnpkg.com/motion-dom/-/motion-dom-12.4.5.tgz#06116b5a091496654da0d67e40555abbd26068f6"
+  integrity sha512-Q2xmhuyYug1CGTo0jdsL05EQ4RhIYXlggFS/yPhQQRNzbrhjKQ1tbjThx5Plv68aX31LsUQRq4uIkuDxdO5vRQ==
   dependencies:
     motion-utils "^12.0.0"
 
@@ -4005,10 +4005,10 @@ postcss@^8.4.47:
     picocolors "^1.1.1"
     source-map-js "^1.2.1"
 
-postcss@^8.5.2:
-  version "8.5.2"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.5.2.tgz#e7b99cb9d2ec3e8dd424002e7c16517cb2b846bd"
-  integrity sha512-MjOadfU3Ys9KYoX0AdkBlFEF1Vx37uCCeN4ZHnmwm9FfpbsGWMZeBLMmmpY+6Ocqod7mkdZ0DT31OlbsFrLlkA==
+postcss@^8.5.3:
+  version "8.5.3"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.5.3.tgz#1463b6f1c7fb16fe258736cba29a2de35237eafb"
+  integrity sha512-dle9A3yYxlBSrt8Fu+IpjGT8SY8hN0mlaA6GY8t0P5PjIOZemULz/E2Bnm/2dcUOena75OTNkHI76uZBNUUq3A==
   dependencies:
     nanoid "^3.3.8"
     picocolors "^1.1.1"
@@ -4080,10 +4080,10 @@ react-dom@^19.0.0:
   dependencies:
     scheduler "^0.25.0"
 
-react-icons@^5.4.0:
-  version "5.4.0"
-  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-5.4.0.tgz#443000f6e5123ee1b21ea8c0a716f6e7797f7416"
-  integrity sha512-7eltJxgVt7X64oHh6wSWNwwbKTCtMfK35hcjvJS0yxEAhPM8oUKdS3+kqaW1vicIltw+kR2unHaa12S9pPALoQ==
+react-icons@^5.5.0:
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-5.5.0.tgz#8aa25d3543ff84231685d3331164c00299cdfaf2"
+  integrity sha512-MEFcXdkP3dLo8uumGI5xN3lDFNsRtrjbOEKDLD7yv76v4wpnEq2Lt2qeHaQOr34I/wPN3s3+N08WkQ+CW37Xiw==
 
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
@@ -4667,10 +4667,10 @@ thenify-all@^1.0.0:
   dependencies:
     any-promise "^1.0.0"
 
-thirdweb@^5.88.5:
-  version "5.88.5"
-  resolved "https://registry.yarnpkg.com/thirdweb/-/thirdweb-5.88.5.tgz#a4609cd88d8866ab848914570b13740f0c0d279b"
-  integrity sha512-U9wD6C3LLKIahOq1YxhimnwZCVXWiXYL+za6vZK3PG/M44we8JUdaUCcKGcX/RH23l+pjm+rJ7rFO/3UMP8s/A==
+thirdweb@^5.88.7:
+  version "5.88.7"
+  resolved "https://registry.yarnpkg.com/thirdweb/-/thirdweb-5.88.7.tgz#d404decc764cf0787a604171e6ca65ec4129227e"
+  integrity sha512-gtT6tyMhn4x34V1FF6AeGfMRfO57xIqkxHiA4J+DdGgZESDH07UJDxJ0h4hXOqYtTqY2SNQy20uVCDjpV1FEKg==
   dependencies:
     "@coinbase/wallet-sdk" "4.3.0"
     "@emotion/react" "11.14.0"

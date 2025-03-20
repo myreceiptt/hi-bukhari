@@ -8,8 +8,8 @@ import Link from "next/link";
 // Blockchain configurations
 import {
   entityAddress,
-  entityAlias1,
-  entityAlias2,
+  // entityAlias1,
+  // entityAlias2,
   entityDate,
   entityEmail,
   entityMonth,
@@ -40,7 +40,7 @@ export default function Terms() {
           {/* Title */}
           <div className="text-center">
             <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal text-hitam-judul-body">
-              Terms of Use
+              T and C of Use
             </h1>
             <span className="text-xs leading-10 text-icon-wording">
               &#9673; &#9673; &#9673; &#9673;
@@ -53,72 +53,90 @@ export default function Terms() {
           {/* Policy Overview */}
           <section className="space-y-4">
             <h3 className="text-base md:text-lg lg:text-xl xl:text-2xl font-semibold text-hitam-judul-body uppercase">
-              Overview
+              {entityName} Terms and Conditions of Use
             </h3>
             <p className="text-sm font-medium text-icon-wording leading-relaxed">
-              This web application and/or mobile application is operated by
-              {entityName}. Throughout the application, the terms
-              &quot;we,&quot; &quot;us,&quot; and &quot;our&quot; refer to{" "}
-              {entityName}, also referred to as {entityAlias1} and{" "}
-              {entityAlias2}. {entityName} offers this application, including
-              all information, tools, and services available from this
-              application to you, the user, conditioned upon your acceptance of
-              all terms, conditions, policies, and notices stated here.
+              Please read these {entityName} Terms and Conditions of Use and
+              Privacy Statement carefully, they contain important information
+              about your rights and obligations.
             </p>
             <p className="text-sm font-medium text-icon-wording leading-relaxed">
-              By visiting our application and/or purchasing something from us,
-              you engage in our &quot;Service&quot; and agree to be bound by the
-              following terms and conditions of use (&quot;Terms of
-              Service,&quot; &quot;Terms of Use,&quot; &quot;Terms&quot;),
-              including those additional terms, conditions, and policies
-              referenced herein and/or available by hyperlink. These Terms and
-              Conditions of Use apply to all users of the application,
-              including, without limitation, users who are browsers,
-              aggregators, vendors, and/or customers.
-            </p>
-            <p className="text-sm font-medium text-icon-wording leading-relaxed">
-              By visiting the application of our product&apos;s merchants, in
-              particular OpenSea.io, you also agree to be bound by their terms
-              and conditions of use.
-            </p>
-            <p className="text-sm font-medium text-icon-wording leading-relaxed">
-              Please read these Terms carefully before accessing or using our
-              application or buying any of our products. By accessing or using
-              any part of the application, you agree to be bound by these Terms.
-              If you do not agree to all the terms and conditions of this
-              agreement, you may not access the application or use any services.
-              If these Terms are considered an offer, acceptance is expressly
-              limited to these Terms.
-            </p>
-            <p className="text-sm font-medium text-icon-wording leading-relaxed">
-              Any new features or tools added to the current application shall
-              also be subject to the Terms. You can review the most current
-              version of the Terms at any time on this page. We reserve the
-              right to update, change, or replace any part of these Terms by
-              posting updates and/or changes to our application. It is your
-              responsibility to check this page periodically for changes. Your
-              continued use of or access to the application after we post any
-              changes constitutes acceptance of those changes. Our application
-              is hosted on Vercel.com.
+              {entityName} is a platform that allows you to collect, issue, and
+              display NFTs. This {entityName} Terms and conditions of Use
+              (&quot;Terms and Conditions&quot;, &quot;Agreement&quot;) document
+              is entered into by user or users (&quot;User&quot;,
+              &quot;Users&quot; or &quot;You&quot;) and {entityName} (&quot;
+              {entityName},&quot; &quot;We&quot; or &quot;Us&quot;). It contains
+              terms and conditions you have agreed to abide by upon accessing
+              https://galeri.harmoniistiqlal.com/ (&quot;Site&quot;). The terms
+              govern your access and use of the {entityName} ecosystem,
+              including content, features, and functionality. By signing up to
+              use an account through the Site, or any associated websites, APIs,
+              or mobile applications, you agree that you have read, understood,
+              and accept all of the terms and conditions contained in this
+              Agreement.
             </p>
           </section>
           <section className="space-y-4">
             <h3 className="text-base md:text-lg lg:text-xl xl:text-2xl font-semibold text-hitam-judul-body uppercase">
-              SECTION 1 - ONLINE TERMS
+              Basic {entityName} Services
+            </h3>
+            <ul className="list-disc list-outside space-y-2">
+              <li className="text-sm font-medium text-icon-wording leading-relaxed">
+                Eligibility. To be eligible to use the {entityName} services,
+                you must register an account on {entityName} Site.
+              </li>
+              <li className="text-sm font-medium text-icon-wording leading-relaxed">
+                {entityName} Services. Your account encompasses the following
+                basic services: Access to collect virtual collectibles in a form
+                of Non Fungible Tokens; Access to issue and publish NFTs;
+                Privilege tagged to NFTs that you, as an NFT collector
+                (&quot;Collector&quot;), have collected.
+              </li>
+            </ul>
+          </section>
+          <section className="space-y-4">
+            <h3 className="text-base md:text-lg lg:text-xl xl:text-2xl font-semibold text-hitam-judul-body uppercase">
+              Agreement to these Terms & Conditions
             </h3>
             <p className="text-sm font-medium text-icon-wording leading-relaxed">
-              By agreeing to these Terms, you represent that you are at least
-              the age of majority in your state or province of residence. You
-              may not use our products or services for any illegal or
-              unauthorized purpose, nor may you, in the use of the Service,
-              violate any laws in your jurisdiction (including, but not limited
-              to, copyright laws).
+              All Users shall use the Services in accordance with these Terms
+              and Conditions. Users may not use the Services unless they agree
+              to these Terms and Conditions.
             </p>
             <p className="text-sm font-medium text-icon-wording leading-relaxed">
-              The headings in this agreement are included for convenience only
-              and will not limit or otherwise affect these Terms.
+              Users who are minors may only use the Services by obtaining prior
+              consent from their parents or legal guardians. Furthermore, if
+              Users will be using the Services on behalf of, or for the purposes
+              of, a business enterprise, then such business enterprise must also
+              agree to these Terms and Conditions prior to using the Services.
+            </p>
+            <p className="text-sm font-medium text-icon-wording leading-relaxed">
+              If there are Separate Terms and Conditions applicable to the
+              Services, Users shall also comply with such Separate Terms and
+              Conditions as well as these Terms and Conditions in using the
+              Services.
             </p>
           </section>
+          <section className="space-y-4">
+            <h3 className="text-base md:text-lg lg:text-xl xl:text-2xl font-semibold text-hitam-judul-body uppercase">
+              Modification to these Terms and Condition
+            </h3>
+            <p className="text-sm font-medium text-icon-wording leading-relaxed">
+              Voyage may modify these Terms and Conditions when Voyage deems it
+              to be necessary, within the scope of the purposes of the Services.
+              In such a case, Voyage will indicate the contents of the modified
+              version of these Terms and Conditions, as well as the effective
+              date of the modification, on the Services or on Voyage’s website,
+              or will publicize the same to Users by notifying Users in the
+              manner prescribed by Voyage.
+            </p>
+            <p className="text-sm font-medium text-icon-wording leading-relaxed">
+              The modified version of these Terms and Conditions shall become
+              effective as of the effective date thereof.
+            </p>
+          </section>
+
           <section className="space-y-4">
             <h3 className="text-base md:text-lg lg:text-xl xl:text-2xl font-semibold text-hitam-judul-body uppercase">
               SECTION 2 - GENERAL CONDITIONS

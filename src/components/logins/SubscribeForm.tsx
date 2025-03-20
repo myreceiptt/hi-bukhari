@@ -43,8 +43,6 @@ export default function Subscribe() {
       } else {
         setStatusMessage("Subscription failed. Please try again.");
       }
-    } catch (error) {
-      setStatusMessage("An error occurred. Please try again later.");
     } finally {
       setLoading(false);
     }

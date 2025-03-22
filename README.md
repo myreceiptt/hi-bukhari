@@ -1,17 +1,3 @@
-# thirdweb SDK + Next.js starter
-
-## Setup client id
-
-Before you start, you need to replace the placeholder `clientId` with your client ID to use thirdweb SDK.
-
-Refer to [Creating a client](https://portal.thirdweb.com/typescript/v5/client) guide to see how you can get a client id.
-
-Go to `src/client.ts` file and replace the placeholder `clientId` with your client ID.
-
-```ts
-const clientId = "......";
-```
-
 ## Usage
 
 ### Install dependencies
@@ -20,10 +6,28 @@ const clientId = "......";
 yarn
 ```
 
+### Check outdated dependencies
+
+```bash
+yarn outdated
+```
+
+### Upgrade dependencies interactively
+
+```bash
+yarn upgrade-interactive --latest
+```
+
 ### Start development server
 
 ```bash
 yarn dev
+```
+
+### Check all the code
+
+```bash
+yarn run lint
 ```
 
 ### Create a production build
@@ -40,10 +44,10 @@ yarn start
 
 ## Resources
 
-- [thirdweb SDK documentation](https://portal.thirdweb.com/typescript/v5)
-- [React components and hooks](https://portal.thirdweb.com/typescript/v5/react)
-- [thirdweb Dashboard](https://thirdweb.com/dashboard)
+- [Prof. NOTA Inc.](https://nota.endhonesa.com/)
+- [Prof. NOTA Console](https://prompt.endhonesa.com/)
+- [Prof. NOTA Tutor](https://baca.endhonesa.com/)
 
-## Join our Discord!
+## Join Prof. NOTA Discord!
 
-For any questions or suggestions, join our discord at [https://discord.gg/thirdweb](https://discord.gg/thirdweb).
+For any questions or suggestions, join Prof. NOTA discord at [https://discord.gg/5KrsT6MbFm](https://discord.gg/5KrsT6MbFm).

@@ -43,9 +43,6 @@ export default function Subscribe() {
       } else {
         setStatusMessage("Subscription failed. Please try again.");
       }
-    } catch (error) {
-      console.error("Subscription error:", error); // Logs the error to console
-      setStatusMessage("An error occurred. Please try again later.");
     } finally {
       setLoading(false);
     }

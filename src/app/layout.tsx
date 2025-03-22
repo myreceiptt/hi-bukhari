@@ -14,10 +14,10 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Bukhari Islamic Art Gallery - Harmoni Istiqlal",
   description: "Galeri Seni Islam Bukhari",
-  metadataBase: new URL("https://nota.straight-line.org"),
+  metadataBase: new URL("https://galeri.harmoniistiqlal.com"),
   authors: [
-    { name: "MyReceipt", url: "https://www.straight-line.org" },
-    { name: "Prof. NOTA", url: "https://prompt.straight-line.org" },
+    { name: "MyReceipt", url: "https://myreceipt.endhonesa.com" },
+    { name: "Prof. NOTA", url: "https://nota.endhonesa.com" },
   ],
   creator: "MyReceipt and Friends",
   publisher: "Voyage.co.id",
